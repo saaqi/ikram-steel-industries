@@ -213,7 +213,7 @@ a {
 	display: -ms-grid;
 	display: grid;
     place-items: center;
-    padding: 11.6rem 5% 6rem;
+    padding: 6rem 5%;
 }
 
 .our-products .row,
