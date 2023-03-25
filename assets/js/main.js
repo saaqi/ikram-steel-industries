@@ -119,3 +119,9 @@ window.onload = setTimeout(function() {
     loader.style.opacity = '0';
 }, 500);
 
+
+
+
+/* ## Show Current Year
+--------------------------------------------- */
+document.getElementById("year").innerHTML = new Date().getFullYear();
