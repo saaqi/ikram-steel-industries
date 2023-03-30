@@ -212,8 +212,9 @@ a {
 .contact-us .container {
 	display: -ms-grid;
 	display: grid;
-    place-items: center;
-    padding: 6rem 5%;
+  place-items: center;
+  padding: 6rem 5%;
+  min-height: 100vh;
 }
 
 .our-products .row,
@@ -266,7 +267,6 @@ a {
 
 .home-section .container {
 	background-color: rgba(0, 0, 0, 0.5);
-	min-height: 100vh;
 }
 
 .home-section .row {
