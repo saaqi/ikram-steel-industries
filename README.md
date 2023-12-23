@@ -20,7 +20,7 @@ If you would like to contribute to this website template, please follow the belo
 5. Submit a pull request.
 
 ## Credits:
-This website template was created using HTML, CSS, and JavaScript. The following libraries were used in the creation of this website template:
+This website template is created and maintained by [Saqib Islam](https://saqibtech.com "Saqib Islam - UI/UX Designer & Fullstack Developer.") using HTML, CSS, and JavaScript. The following libraries were used in the creation of this website template:
 * FsLightbox - https://fslightbox.com/
 * Google Maps API - https://developers.google.com/maps
 
