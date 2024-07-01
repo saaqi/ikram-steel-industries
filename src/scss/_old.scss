@@ -356,7 +356,7 @@ a {
   text-align: center;
 }
 
-.our-products .row > * {
+.our-products .row>* {
   background-color: rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 0.5rem;
   border-radius: 0.5rem;
@@ -536,7 +536,7 @@ ul.address-contact>li>a {
 }
 
 .site-title>a {
-  background: url(img/logo.png) no-repeat left;
+  background: url('../../public/img/logo.png') no-repeat left;
   background-size: contain;
   display: block;
   height: 76px;
@@ -651,7 +651,7 @@ ul.address-contact>li>a {
   }
 
   .home-section {
-    background-image: url(img/home-bg.webp);
+    background-image: url('../../public/img/home-bg.webp');
     background-attachment: fixed;
   }
 
@@ -805,7 +805,7 @@ ul.address-contact>li>a {
 
   /* ### Home Sections */
   .home-section {
-    background-image: url(img/home-bg-768.webp);
+    background-image: url('../../public/img/home-bg-768.webp');
   }
 
   .home-section .row {
