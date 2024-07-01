@@ -1,4 +1,6 @@
-
+// import '../scss/bs-static.scss';
+import '../scss/main.scss';
+import 'fslightbox';
 
 /* ## Set Mobile Navigation stuff
 --------------------------------------------- */
@@ -61,7 +63,7 @@ window.addEventListener("scroll", () => {
   } else {
     document.querySelector('body').classList.remove('dark');
   }
-});	
+});
 
 
 
@@ -108,7 +110,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 
-        
 /* ## HIDE PRELOADER
 --------------------------------------------- */
 // HIDE PRELOADER

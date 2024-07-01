@@ -1,0 +1,30 @@
+{
+  "name": "ikram-steel-industries",
+  "description": "An HTML5 single page website template. This is a single page website template for a Production Company Introduction. The website has a fully responsive header area, products section, mission statement, contact area with WhatsApp, Google maps and call links, gallery section, and footer section. This website template can be used by any steel melter company to showcase their products, services, and company information.",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --emptyOutDir",
+    "test": "vite preview",
+    "bs-static": "sass --no-source-map ./src/scss/bs-dynamic.scss ./src/scss/bs-static.scss",
+    "push": "git add . && git commit -m \"auto commit\" && npm version patch && git push"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "autoprefixer": "^10.4.16",
+    "bootstrap": "^5.3.2",
+    "cssnano": "^6.0.2",
+    "postcss": "^8.4.31",
+    "sass": "^1.69.5",
+    "vite": "^5.0.0",
+    "vite-plugin-minify": "^1.5.2",
+    "vite-plugin-webfont-dl": "^3.9.1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "boxicons": "^2.1.4",
+    "fslightbox": "^3.4.1"
+  }
+}
