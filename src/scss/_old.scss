@@ -1,73 +1,3 @@
-@font-face {
-  font-family: 'icomoon';
-  src: url(data:application/font-woff;base64,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) format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-
-[class^="icon-"]::before,
-[class*=" icon-"]::before {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  padding-right: 5px;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-close::before,
-.menu-toggle.activated::before {
-  content: "\e902";
-}
-
-.icon-menu::before {
-  content: "\e903";
-}
-
-.icon-arrow-up::before {
-  content: "\e900";
-}
-
-.icon-home::before {
-  content: "\e901";
-}
-
-.icon-images::before {
-  content: "\e90e";
-}
-
-.icon-cart::before {
-  content: "\e93a";
-}
-
-.icon-address-book::before {
-  content: "\e944";
-}
-
-.icon-envelop::before {
-  content: "\e945";
-}
-
-.icon-mobile::before {
-  content: "\e958";
-}
-
-.icon-users::before {
-  content: "\e972";
-}
-
-.icon-whatsapp::before {
-  content: "\ea93";
-}
 
 
 /* ## Box Sizing
@@ -96,7 +26,6 @@ html {
 body {
   background-color: #fff;
   color: #fff;
-  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.5;
@@ -499,99 +428,6 @@ ul.address-contact>li>a {
   padding-bottom: 0.2rem;
 }
 
-/* Site Header
----------------------------------------------------------------------------------------------------- */
-
-/* Site Header
---------------------------------------------- */
-
-.site-header {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  padding: 0 5%;
-}
-
-.site-header.flex {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 7.5fr;
-  grid-template-columns: 2fr 7.5fr;
-}
-
-.site-title {
-  margin-bottom: 0;
-}
-
-
-.title-area,
-.dark .title-area {
-  padding: 0;
-}
-
-.site-title>a {
-  background: url('../../public/img/logo.png') no-repeat left;
-  background-size: contain;
-  display: block;
-  height: 76px;
-  text-indent: -9999px;
-  margin-bottom: 0;
-  z-index: -99;
-}
-
-.dark .site-title>a {
-  height: 56px;
-}
-
-.site-description {
-  display: block;
-  height: 0;
-  margin-bottom: 0;
-  text-indent: -9999px;
-}
-
-
-/* Site Navigation
----------------------------------------------------------------------------------------------------- */
-.primary-menu {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 20px;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.primary-menu .menu-item:has(a.active) {
-  border-bottom: 1px solid #fff;
-}
-
-.primary-menu a:hover {
-  color: #ccc;
-}
-
-.primary-menu a {
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 76px;
-  text-transform: uppercase;
-}
-
-.dark .primary-menu a {
-  line-height: 56px;
-}
 
 
 
@@ -608,18 +444,12 @@ ul.address-contact>li>a {
 
 
 
-
-
-
-/* Media Queries
----------------------------------------------------------------------------------------------------- */
 /* For PC only */
 @media only screen and (min-width: 1200px) {
 
   /* Responsive Menu
 --------------------------------------------- */
-  .home-section .row,
-  .site-header {
+  .home-section .row {
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.3);
   }
@@ -651,7 +481,7 @@ ul.address-contact>li>a {
   }
 
   .home-section {
-    background-image: url('../../public/img/home-bg.webp');
+    background-image: url('../img/home-bg.webp');
     background-attachment: fixed;
   }
 
@@ -662,129 +492,6 @@ ul.address-contact>li>a {
 
 
 @media only screen and (max-width: 1024px) {
-
-  .site-title>a {
-    height: 56px;
-  }
-
-  .primary-menu a,
-  .dark .primary-menu a {
-    line-height: 56px;
-  }
-
-
-  /* ### Global */
-  .our-products .row,
-  .our-team .row,
-  .gallery-section .row {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-
-
-}
-
-
-@media only screen and (max-width: 768px) {
-
-  .site-header.flex {
-    -ms-grid-columns: 90% 10px 10%;
-    grid-template-columns: 90% 10%;
-    grid-column-gap: 1rem;
-  }
-
-  nav.nav-primary {
-    max-height: 0;
-    -webkit-transition: all 0.15s ease-out;
-    -o-transition: all 0.15s ease-out;
-    -moz-transition: all 0.15s ease-out;
-    -ms-transition: all 0.15s ease-out;
-    transition: all 0.15s ease-out;
-    overflow: hidden;
-    position: relative;
-  }
-
-  nav.nav-primary.show {
-    margin-top: 2rem;
-    max-height: 100vh;
-    -webkit-transition: all 0.25s ease-in;
-    -o-transition: all 0.25s ease-in;
-    -moz-transition: all 0.25s ease-in;
-    -ms-transition: all 0.25s ease-in;
-    transition: all 0.25s ease-in;
-    visibility: visible;
-  }
-
-  .menu-toggle {
-    background: transparent;
-    border-width: 0;
-    color: #fff;
-    display: block;
-    padding: 0;
-    visibility: visible;
-    cursor: pointer;
-  }
-
-  .primary-menu {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-
-  .primary-menu .menu-item {
-    display: block;
-    margin-left: -webkit-calc(10% + 10px);
-    margin-left: calc(10% + 10px);
-    /*		text-align: center;*/
-    width: 100%;
-  }
-
-  .primary-menu a,
-  .dark .primary-menu a {
-    line-height: 30px;
-  }
-
-  .menu-toggle:focus,
-  .menu-toggle:hover {
-    background-color: transparent;
-    border-width: 0;
-  }
-
-  .menu-toggle::before {
-    display: inline-block;
-    /* content: '☰';*/
-    text-rendering: auto;
-    -webkit-transform: rotate(0);
-    -moz-transform: rotate(0);
-    -ms-transform: rotate(0);
-    -o-transform: rotate(0);
-    transform: rotate(0);
-    transition: transform .25s ease-in-out;
-    font-size: 2.4rem;
-    padding-top: 0.4rem;
-    padding-right: 0;
-  }
-
-  .menu-toggle.activated::before {
-    /*	content: '✕';*/
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
-
-  .menu-toggle::before,
-  .menu-toggle.activated::before {
-    text-rendering: auto;
-  }
-
-
-
-
-
 
   /* ### Global */
   .our-products .row,
@@ -801,11 +508,9 @@ ul.address-contact>li>a {
 
 
 
-
-
   /* ### Home Sections */
   .home-section {
-    background-image: url('../../public/img/home-bg-768.webp');
+    background-image: url('../img/home-bg-768.webp');
   }
 
   .home-section .row {

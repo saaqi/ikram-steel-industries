@@ -1,11 +1,14 @@
 /* Import Variables */
 @use "./variables"as v;
 
-// Preloader
-@import './preloader';
-
 
 // Import base styling
+body {
+  font-family: "Inter", sans-serif;
+}
+
+@import "./icons";
+@import "./navigation";
 @import "./old";
 
 // Import navigation styles
