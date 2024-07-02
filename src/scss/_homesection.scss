@@ -1,13 +1,14 @@
 .home-section {
   min-height: 100svh;
-  background-image: url('../img/home-bg.webp');
+  background-image: url('../img/home-bg.png');
+  background-repeat: repeat;
   background-attachment: fixed;
 
   .overlay {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba(0,0,0, 0.6);
+    background-color: rgba( 0,0,0, 0.6 );
     z-index: 1;
   }
   .container {
@@ -15,8 +16,8 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .home-section {
-    background-image: url('../img/home-bg-768.webp');
-  }
-}
+// @media only screen and (max-width: 768px) {
+//   .home-section {
+//     background-image: url('../img/home-bg-768.webp');
+//   }
+// }

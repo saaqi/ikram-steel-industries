@@ -58,7 +58,8 @@ for ( var eachLink of menuLinks ) {
 		// remove activated class and attrs from menu-toggle button
 		menuButton.classList.remove('activated');
 		menuButton.setAttribute('aria-expanded', 'false');
-		menuButton.setAttribute('aria-pressed', 'false');
+    menuButton.setAttribute('aria-pressed', 'false');
+    toggleIcon.classList.remove('bx-x');
 
 	});
 }
