@@ -1,0 +1,26 @@
+.go-top>a {
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2;
+  line-height: 1;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.go-top a::before {
+  padding: 0;
+}
+
+.dark .go-top a {
+  opacity: 1;
+  visibility: visible;
+
+}

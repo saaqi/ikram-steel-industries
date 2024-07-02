@@ -2,16 +2,73 @@
 @use "./variables"as v;
 
 
+@import "./bs-static";
+// @import "./old";
+@import "./icons";
+@import "./navigation";
+@import "./homesecttion";
+@import "./toplink";
+
+
+
 // Import base styling
 body {
   font-family: "Inter", sans-serif;
 }
 
-@import "./icons";
-@import "./navigation";
-@import "./old";
+a,
+.button,
+.site-header.dark {
+  transition: all 0.2s ease-in-out;
+}
 
-// Import navigation styles
+.section-heading {
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
 
+.section-heading::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 240px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 120px);
+}
 
-// Import Sections
+.section-heading::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: v.$primary;
+  bottom: 0;
+  left: calc(50% - 40px);
+}
+
+.section-copy {
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main section {
+  min-height: 75svh;
+  display: flex;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+main section:nth-child(even) {
+  background-color: #fefefe;
+}
+
+main section:nth-child(odd) {
+  background-color: #f6f6f6;
+}
