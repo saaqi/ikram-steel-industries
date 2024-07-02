@@ -9,6 +9,10 @@
 @import "./homesecttion";
 @import "./toplink";
 
+html {
+  scroll-padding-top: 68px;
+  /* scroll-snap-type: y proximity; */
+}
 
 
 // Import base styling
