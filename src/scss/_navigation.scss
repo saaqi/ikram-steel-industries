@@ -28,6 +28,7 @@
 
 .site-title>a {
   background: url('../img/isi_logo.svg') no-repeat left;
+  filter: drop-shadow(2px 2px 6px rgba(255, 255, 255, 0.3));
   background-size: contain;
   display: block;
   height: 66px;
@@ -131,13 +132,13 @@
     width: 100%;
   }
 
-  .menu-toggle:focus,
-  .menu-toggle:hover {
+  .toggle-icon:focus,
+  .toggle-icon:hover {
     background-color: transparent;
     border-width: 0;
   }
 
-  .menu-toggle::before {
+  .toggle-icon::before {
     display: inline-block;
     text-rendering: auto;
     transform: rotate(0);
@@ -146,12 +147,12 @@
     padding-right: 0;
   }
 
-  .menu-toggle.activated::before {
-    transform: rotate(180deg);
+  .activated .toggle-icon::before {
+    transform: rotateY(180deg);
   }
 
-  .menu-toggle::before,
-  .menu-toggle.activated::before {
+  .toggle-icon::before,
+  .activated .toggle-icon::before {
     text-rendering: auto;
   }
 

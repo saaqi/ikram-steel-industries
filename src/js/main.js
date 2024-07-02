@@ -11,6 +11,7 @@ import 'fslightbox';
 const menuLinks = document.querySelectorAll('.primary-menu .menu-item a, .go-top a, .site-title a');
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('nav.nav-primary');
+const toggleIcon = document.querySelector('.toggle-icon');
 
 
 // Functionality for main menu-toggle button
@@ -23,6 +24,12 @@ menuButton.addEventListener('click', function() {
 	menuButton.classList.toggle('activated');
 
 	// toggle attrs
+	if(menuButton.getAttribute('aria-expanded') === 'true') {
+    toggleIcon.classList.remove('bx-x');
+	} else {
+    toggleIcon.classList.add('bx-x');
+  }
+
 	if(menuButton.getAttribute('aria-expanded') === 'true') {
 		menuButton.setAttribute('aria-expanded', 'false');
 	} else {
