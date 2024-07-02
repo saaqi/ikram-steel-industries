@@ -1,6 +1,9 @@
-// import '../scss/bs-static.scss';
+import '../scss/_bs-static.scss';
 import '../scss/main.scss';
+import 'boxicons/css/boxicons.min.css'
 import 'fslightbox';
+// import 'boxicons';
+
 
 /* ## Set Mobile Navigation stuff
 --------------------------------------------- */

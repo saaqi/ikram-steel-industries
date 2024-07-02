@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "boxicons": "^2.1.4",
     "fslightbox": "^3.4.1"
   }
 }

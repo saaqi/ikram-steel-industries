@@ -1,16 +1,12 @@
 /* Import Variables */
 @use "./variables"as v;
 
-
-@import "./bs-static";
-// @import "./old";
-@import "./icons";
 @import "./navigation";
-@import "./homesecttion";
+@import "./homesection";
 @import "./toplink";
 
 html {
-  scroll-padding-top: 68px;
+  scroll-padding-top: 55px;
   /* scroll-snap-type: y proximity; */
 }
 
@@ -20,10 +16,14 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.bx {
+  font-size: .95em;
+}
+
 a,
 .button,
 .site-header.dark {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .section-heading {

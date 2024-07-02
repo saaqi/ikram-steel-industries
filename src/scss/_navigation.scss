@@ -1,7 +1,7 @@
 /* Site Header
 --------------------------------------------- */
 .dark .site-header {
-  background-color: rgba(v.$primary, 0.9);
+  background-color: rgba(v.$info, 0.95);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -51,10 +51,6 @@
   border-bottom: 1px solid #fff;
 }
 
-.primary-menu a:hover {
-  color: #ccc;
-}
-
 .primary-menu a {
   line-height: 66px;
 }
@@ -84,7 +80,7 @@
 @media only screen and (max-width: 992px) {
 
   .site-header {
-    background-color: rgba(v.$primary, 0.9);
+    background-color: rgba(v.$info, 0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
 
@@ -117,7 +113,6 @@
   .menu-toggle {
     background: transparent;
     border-width: 0;
-    color: #fff;
     display: block;
     padding: 0;
     visibility: visible;
