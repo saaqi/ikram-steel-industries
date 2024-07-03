@@ -8,11 +8,13 @@
 html {
   scroll-padding-top: 55px;
   /* scroll-snap-type: y proximity; */
+  // word-break: break-all;
+  overflow-x: hidden;
+
 }
 
-
-// Import base styling
 body {
+  overflow-x: hidden;
   font-family: "Inter", sans-serif;
 }
 
