@@ -1,64 +1,55 @@
 /* Site Header
 --------------------------------------------- */
 .dark .site-header {
-  background-color: rgba(v.$info, 0.95);
+  background-color: var(--bs-warning);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .site-header {
-  background-color: transparent;
-  box-shadow: none;
-  left: 0;
   position: fixed;
+  left: 0;
   top: 0;
   width: 100%;
   z-index: 99;
-  // padding: 0 5%;
 }
 
 .site-header .flex {
   display: grid;
-  grid-template-columns: 2fr 7.5fr;
+  grid-template-columns: 1fr 11fr;
   align-items: center;
-}
-
-.site-title {
-  margin-bottom: 0;
 }
 
 .site-title>a {
   background: url('../img/isi_logo.svg') no-repeat left;
-  filter: drop-shadow(2px 2px 6px rgba(255, 255, 255, 0.3));
+  // filter: drop-shadow(2px 2px 6px rgba(255, 255, 255, 0.3));
   background-size: contain;
   display: block;
-  height: 66px;
   text-indent: -9999px;
+  padding: 15px 0;
   margin-bottom: 0;
-  z-index: -99;
+  z-index: -9999;
 }
 
-.dark .site-title>a {
-  height: 56px;
+.primary-menu .menu-item a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.5px;
 }
 
-.site-description {
-  display: block;
-  height: 0;
-  margin-bottom: 0;
-  text-indent: -9999px;
+
+.dark .primary-menu .menu-item a {
+  color: #333;
 }
 
-.primary-menu .menu-item:has(a.active) {
-  border-bottom: 1px solid #fff;
+.dark .primary-menu .menu-item a.active,
+.dark .primary-menu .menu-item a:hover {
+  color: var(--bs-info);
 }
 
-.primary-menu a {
-  line-height: 66px;
-}
-
-.dark .primary-menu a {
-  line-height: 56px;
-}
+// .primary-menu .menu-item:has(a.active) {
+//   border-bottom: 1px solid var(--bs-warning);
+// }
 
 
 /* For Large Devices only */
@@ -81,61 +72,40 @@
 @media only screen and (max-width: 992px) {
 
   .site-header {
-    background-color: rgba(v.$info, 0.95);
+    background-color: var(--bs-warning);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
 
-  .site-title>a {
-    height: 56px;
-  }
-
-  .primary-menu a {
-    line-height: 56px;
+  .primary-menu .menu-item a {
+    color: #333;
   }
 
   .site-header .flex {
-    grid-template-columns: 90% 10%;
+    grid-template-columns: 11fr 1fr;
   }
 
   nav.nav-primary {
     max-height: 0;
-    transition: all 0.15s ease-out;
+    transition: all 0.1s ease-out;
     overflow: hidden;
     position: relative;
   }
 
   nav.nav-primary.show {
-    margin-top: 2rem;
+    margin-top: 1rem;
     max-height: 100vh;
-    transition: all 0.25s ease-in;
+    transition: all 0.20s ease-in-out;
     visibility: visible;
   }
 
   .menu-toggle {
     background: transparent;
     border-width: 0;
-    display: block;
-    padding: 0;
-    visibility: visible;
-    cursor: pointer;
-  }
-
-  .primary-menu {
-    flex-wrap: wrap;
-    margin-bottom: 20px;
   }
 
   .primary-menu .menu-item {
-    display: block;
-    margin-left: -webkit-calc(10% + 10px);
-    margin-left: calc(10% + 10px);
+    margin-left: 10%;
     width: 100%;
-  }
-
-  .toggle-icon:focus,
-  .toggle-icon:hover {
-    background-color: transparent;
-    border-width: 0;
   }
 
   .toggle-icon::before {
@@ -151,9 +121,5 @@
     transform: rotateY(180deg);
   }
 
-  .toggle-icon::before,
-  .activated .toggle-icon::before {
-    text-rendering: auto;
-  }
 
 }
