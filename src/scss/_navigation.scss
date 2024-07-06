@@ -3,6 +3,7 @@
 .dark .site-header {
   background-color: var(--bs-warning);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: all .3s ease-in;
 }
 
 .site-header {
@@ -11,12 +12,14 @@
   top: 0;
   width: 100%;
   z-index: 99;
+  transition: all .3s ease-out;
 }
 
 .site-header .flex {
   display: grid;
   grid-template-columns: 1fr 11fr;
   align-items: center;
+
 }
 
 .site-title>a {
