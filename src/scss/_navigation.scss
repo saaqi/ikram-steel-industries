@@ -42,12 +42,16 @@
 .dark .primary-menu .menu-item a.active,
 .dark .primary-menu .menu-item a:hover {
   color: var(--bs-info);
+  text-shadow: 1px 1px 2px rgba(#333, 0.5);
 }
 
 // .primary-menu .menu-item:has(a.active) {
 //   border-bottom: 1px solid var(--bs-warning);
 // }
 
+.shop-link {
+  line-height: 0;
+}
 
 /* For Large Devices only */
 @media only screen and (min-width: 993px) {
@@ -80,7 +84,6 @@
     align-items: center;
   }
 
-
   .site-header {
     background-color: var(--bs-warning);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -88,6 +91,12 @@
 
   .primary-menu .menu-item a {
     color: #333;
+  }
+
+  .primary-menu .menu-item a.active,
+  .primary-menu .menu-item a:hover {
+    color: var(--bs-info);
+    text-shadow: 1px 1px 2px rgba(#333, 0.5);
   }
 
   .site-title>a {
