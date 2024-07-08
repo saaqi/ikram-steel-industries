@@ -1,11 +1,5 @@
 /* Site Header
 --------------------------------------------- */
-.dark .site-header {
-  background-color: var(--bs-warning);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: all .3s ease-in;
-}
-
 .site-header {
   position: fixed;
   left: 0;
@@ -13,51 +7,62 @@
   width: 100%;
   z-index: 99;
   transition: all .3s ease-out;
+
+  .site-title>a {
+    background: url('../img/isi_logo.svg') no-repeat left;
+    // filter: drop-shadow(2px 2px 6px rgba(255, 255, 255, 0.3));
+    background-size: contain;
+    display: block;
+    text-indent: -9999px;
+    padding: 15px 0;
+    margin-bottom: 0;
+    z-index: -9999;
+  }
+
+  .shop-link {
+    line-height: 0;
+    font-size: 2em;
+  }
+}
+
+.primary-menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  flex-direction: row;
+
+  .menu-item a {
+    color: var(--bs-warning);
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+}
+
+.dark {
+
+  .site-header {
+    background-color: var(--bs-warning);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: all .3s ease-in;
+  }
+
+  .primary-menu .menu-item a {
+    color: #333;
+
+    &.active,
+    &:hover {
+      color: var(--bs-info);
+      text-shadow: 1px 1px 2px rgba(#333, 0.5);
+    }
+  }
 }
 
 
-.site-title>a {
-  background: url('../img/isi_logo.svg') no-repeat left;
-  // filter: drop-shadow(2px 2px 6px rgba(255, 255, 255, 0.3));
-  background-size: contain;
-  display: block;
-  text-indent: -9999px;
-  padding: 15px 0;
-  margin-bottom: 0;
-  z-index: -9999;
-}
-
-.primary-menu .menu-item a {
-  color: #fff;
-  font-weight: 500;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-}
-
-
-.dark .primary-menu .menu-item a {
-  color: #333;
-}
-
-.dark .primary-menu .menu-item a.active,
-.dark .primary-menu .menu-item a:hover {
-  color: var(--bs-info);
-  text-shadow: 1px 1px 2px rgba(#333, 0.5);
-}
-
-// .primary-menu .menu-item:has(a.active) {
-//   border-bottom: 1px solid var(--bs-warning);
-// }
-
-.shop-link {
-  line-height: 0;
-}
 
 /* For Large Devices only */
 @media only screen and (min-width: 993px) {
 
-  /* Responsive Menu
---------------------------------------------- */
   .site-header .grid {
     display: grid;
     grid-template-columns: 1fr 11fr;
@@ -72,59 +77,67 @@
   .nav-primary {
     display: block !important;
   }
-
 }
 
-
+/* For Small Devices only */
 @media only screen and (max-width: 992px) {
-
-  .site-header .flex {
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
-    align-items: center;
-  }
 
   .site-header {
     background-color: var(--bs-warning);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+    .flex {
+      display: grid;
+      grid-template-columns: 1fr 8fr 1fr;
+      align-items: center;
+    }
   }
 
-  .primary-menu .menu-item a {
-    color: #333;
-  }
-
-  .primary-menu .menu-item a.active,
-  .primary-menu .menu-item a:hover {
-    color: var(--bs-info);
-    text-shadow: 1px 1px 2px rgba(#333, 0.5);
-  }
-
-  .site-title>a {
-    background-position: center;
+  .primary-menu {
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0 0 1rem 2rem;
   }
 
   nav.nav-primary {
     max-height: 0;
-    transition: all 0.1s ease-out;
-    overflow: hidden;
-    position: relative;
+    transition: all 0.15s ease-out;
+    overflow-y: scroll;
+    // position: relative;
+
+    &.show {
+      margin-top: 1rem;
+      max-height: 100vh;
+      transition: all 0.20s ease-in-out;
+      visibility: visible;
+    }
   }
 
-  nav.nav-primary.show {
-    margin-top: 1rem;
-    max-height: 100vh;
-    transition: all 0.20s ease-in-out;
-    visibility: visible;
+  .shop-link {
+    justify-self: left;
+  }
+
+  .title-area {
+    .site-title>a {
+      background-position: center;
+    }
   }
 
   .menu-toggle {
+    justify-self: right;
+    border: none;
     background: transparent;
-    border-width: 0;
+    padding: 0;
   }
 
-  .primary-menu .menu-item {
-    margin-left: 10%;
-    width: 100%;
+  .primary-menu .menu-item a {
+    color: #333;
+
+    &.active,
+    &:hover {
+      color: var(--bs-info);
+      text-shadow: 1px 1px 2px rgba(#333, 0.5);
+    }
   }
 
   .toggle-icon::before {
@@ -139,6 +152,5 @@
   .activated .toggle-icon::before {
     transform: rotateY(180deg);
   }
-
 
 }
