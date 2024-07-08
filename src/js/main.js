@@ -8,7 +8,7 @@ import 'fslightbox';
 /* ## Set Mobile Navigation stuff
 --------------------------------------------- */
 // selecting the element
-const menuLinks = document.querySelectorAll('.primary-menu .menu-item a, .go-top a, .site-title a');
+const menuLinks = document.querySelectorAll('.primary-menu .menu-item a, .go-top a, .site-title a, .shop-link');
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('nav.nav-primary');
 const toggleIcon = document.querySelector('.toggle-icon');
