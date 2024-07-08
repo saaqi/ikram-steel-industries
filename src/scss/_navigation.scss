@@ -15,12 +15,6 @@
   transition: all .3s ease-out;
 }
 
-.site-header .flex {
-  display: grid;
-  grid-template-columns: 1fr 11fr;
-  align-items: center;
-
-}
 
 .site-title>a {
   background: url('../img/isi_logo.svg') no-repeat left;
@@ -60,6 +54,12 @@
 
   /* Responsive Menu
 --------------------------------------------- */
+  .site-header .grid {
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    align-items: center;
+  }
+
   .menu-toggle {
     display: none;
     visibility: hidden;
@@ -74,6 +74,13 @@
 
 @media only screen and (max-width: 992px) {
 
+  .site-header .flex {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    align-items: center;
+  }
+
+
   .site-header {
     background-color: var(--bs-warning);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -83,8 +90,8 @@
     color: #333;
   }
 
-  .site-header .flex {
-    grid-template-columns: 11fr 1fr;
+  .site-title>a {
+    background-position: center;
   }
 
   nav.nav-primary {
