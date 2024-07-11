@@ -1,41 +1,37 @@
 /* Site Header
 --------------------------------------------- */
 .site-header {
-  position: fixed;
   left: 0;
+  position: fixed;
   top: 0;
+  transition: all .3s ease-out;
   width: 100%;
   z-index: 99;
-  transition: all .3s ease-out;
 
-  .site-title>a {
-    background: url('../img/isi_logo.svg') no-repeat left;
-    // filter: drop-shadow(2px 2px 6px rgba(255, 255, 255, 0.3));
-    background-size: contain;
-    display: block;
-    text-indent: -9999px;
-    padding: 15px 0;
-    margin-bottom: 0;
-    z-index: -9999;
+  .flex {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .shop-link {
-    line-height: 0;
     font-size: 2em;
+    line-height: 0;
   }
 }
 
 .primary-menu {
   display: flex;
-  justify-content: flex-end;
-  gap: 2rem;
   flex-direction: row;
+  gap: 2rem;
+  justify-content: flex-end;
 
   .menu-item a {
     color: var(--bs-warning);
     font-weight: 500;
-    text-decoration: none;
     letter-spacing: 0.5px;
+    text-decoration: none;
   }
 }
 
@@ -58,24 +54,23 @@
   }
 }
 
-
-
 /* For Large Devices only */
 @media only screen and (min-width: 993px) {
 
-  .site-header .grid {
-    display: grid;
-    grid-template-columns: 1fr 11fr;
-    align-items: center;
+  .shop-link {
+    display: none;
   }
 
   .menu-toggle {
     display: none;
+    opacity: 0;
     visibility: hidden;
   }
 
   .nav-primary {
-    display: block !important;
+    display: block;
+    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -85,48 +80,38 @@
   .site-header {
     background-color: var(--bs-warning);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-
-    .flex {
-      display: grid;
-      grid-template-columns: 1fr 8fr 1fr;
-      align-items: center;
-    }
   }
 
   .primary-menu {
-    justify-content: flex-start;
     flex-direction: column;
+    justify-content: flex-start;
     padding: 0 0 1rem 2rem;
   }
 
-  nav.nav-primary {
+  .nav-primary {
     max-height: 0;
-    transition: all 0.15s ease-out;
     overflow-y: scroll;
-    // position: relative;
+    transition: all 0.15s ease-out;
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
 
     &.show {
       margin-top: 1rem;
       max-height: 100vh;
       transition: all 0.20s ease-in-out;
       visibility: visible;
+      opacity: 1;
     }
   }
 
   .shop-link {
-    justify-self: left;
-  }
-
-  .title-area {
-    .site-title>a {
-      background-position: center;
-    }
+    display: block;
   }
 
   .menu-toggle {
-    justify-self: right;
-    border: none;
     background: transparent;
+    border: none;
     padding: 0;
   }
 
@@ -142,11 +127,11 @@
 
   .toggle-icon::before {
     display: inline-block;
+    padding-right: 0;
+    padding-top: 0.4rem;
     text-rendering: auto;
     transform: rotate(0);
     transition: transform .25s ease-in-out;
-    padding-top: 0.4rem;
-    padding-right: 0;
   }
 
   .activated .toggle-icon::before {
