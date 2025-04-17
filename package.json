@@ -13,17 +13,17 @@
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
-    "autoprefixer": "^10.4.20",
-    "bootstrap": "^5.3.3",
+    "autoprefixer": "^10.4.21",
+    "bootstrap": "^5.3.5",
     "cssnano": "^6.1.2",
-    "postcss": "^8.4.44",
-    "sass": "^1.77.8",
-    "vite": "^5.4.2",
+    "postcss": "^8.5.3",
+    "sass": "^1.86.3",
+    "vite": "^5.4.18",
     "vite-plugin-minify": "^1.5.2",
-    "vite-plugin-webfont-dl": "^3.9.5"
+    "vite-plugin-webfont-dl": "^3.10.4"
   },
   "dependencies": {
     "boxicons": "^2.1.4",
-    "fslightbox": "^3.4.1"
+    "fslightbox": "^3.5.1"
   }
 }
