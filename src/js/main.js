@@ -1,13 +1,20 @@
 import '../scss/_bs-static.scss';
 import '../scss/main.scss';
 import 'boxicons/css/boxicons.min.css'
-import 'fslightbox';
 // import 'boxicons';
 
 
 
 import "./_navigation"
 import "./_hidepreloader"
+
+
+// Generate Gallery Content
+import galleryData from "./gallery.json"
+import generateContent from "./generateContent"
+generateContent(galleryData, 'homegallery')
+
+
 
 
 /* ## Add dark claass to the header and top link
@@ -19,7 +26,6 @@ window.addEventListener("scroll", () => {
     document.querySelector('body').classList.remove('dark');
   }
 });
-
 
 
 /* ## Show Current Year

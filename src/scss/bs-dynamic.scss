@@ -1,5 +1,13 @@
 // OVERRIDE DEFAULT VARIABLES
-@import "./variables";
+$primary: #45474B;
+$secondary: #F4CE14;
+$info: #235C47;
+$warning: #F5F7F8;
+// $success:
+// $danger: #E87883;
+// $light:
+// $dark:
+$font-family-sans-serif: Inter, 'sans-serif';
 
 // IMPORT BOOTSTRAP
 @import "../../node_modules/bootstrap/scss/bootstrap";

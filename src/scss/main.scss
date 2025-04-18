@@ -1,6 +1,6 @@
-@import "./navigation";
-@import "./homesection";
-@import "./toplink";
+@use "./navigation";
+@use "./homesection";
+@use "./toplink";
 
 html {
   scroll-padding-top: 55px;

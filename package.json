@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build --emptyOutDir",
     "test": "vite preview",
-    "bs-static": "sass --no-source-map ./src/scss/bs-dynamic.scss ./src/scss/_bs-static.scss",
+    "build-bootstrap": "sass --no-source-map ./src/scss/bs-dynamic.scss ./src/scss/_bs-static.scss",
     "push": "git add . && git commit -m \"auto commit\" && npm version patch && git push"
   },
   "devDependencies": {

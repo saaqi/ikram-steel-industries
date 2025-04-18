@@ -2,7 +2,7 @@
   min-height: 100svh;
 
   .overlay {
-    background-image: url('../img/home-bg.svg');
+    background-image: url('/src/assets/images/home-bg.svg');
     background-repeat: repeat;
     background-attachment: fixed;
     background-size: 60px;
@@ -16,5 +16,11 @@
 
   .container {
     z-index: 2;
+  }
+
+  .cta-buttons {
+    .btn {
+      width: 8em;
+    }
   }
 }

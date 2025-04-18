@@ -33,6 +33,13 @@ export default defineConfig({
     hot: true,
     port: 3000,
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern'
+      }
+    }
+  },
   build: {
     // outDir: "./docs",
     minify: 'terser',
