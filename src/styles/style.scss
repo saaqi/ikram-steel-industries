@@ -1,6 +1,21 @@
-@use "./navigation";
-@use "./homesection";
-@use "./toplink";
+@use './bootstrap.css';
+@use './navigation';
+
+body {
+	min-height: 100svh;
+	display: flex;
+	flex-direction: column;
+	header {
+		width: 100%;
+	}
+	main {
+		width: 100%;
+	}
+	footer {
+		width: 100%;
+		margin-top: auto;
+	}
+}
 
 html {
   scroll-padding-top: 55px;

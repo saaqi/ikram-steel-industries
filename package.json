@@ -1,29 +1,42 @@
 {
-  "name": "ikram-steel-industries",
-  "description": "An HTML5 single page website template. This is a single page website template for a Production Company Introduction. The website has a fully responsive header area, products section, mission statement, contact area with WhatsApp, Google maps and call links, gallery section, and footer section. This website template can be used by any steel melter company to showcase their products, services, and company information.",
-  "private": true,
-  "version": "2.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build --emptyOutDir",
-    "test": "vite preview",
-    "build-bootstrap": "sass --no-source-map ./src/scss/bs-dynamic.scss ./src/scss/_bs-static.scss",
-    "push": "git add . && git commit -m \"auto commit\" && npm version patch && git push"
-  },
-  "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^5.0.0",
-    "autoprefixer": "^10.4.21",
-    "bootstrap": "^5.3.5",
-    "cssnano": "^6.1.2",
-    "postcss": "^8.5.3",
-    "sass": "^1.86.3",
-    "vite": "^5.4.18",
-    "vite-plugin-minify": "^1.5.2",
-    "vite-plugin-webfont-dl": "^3.10.4"
-  },
-  "dependencies": {
-    "boxicons": "^2.1.4",
-    "fslightbox": "^3.5.1"
-  }
+	"name": "ikram-steel-industries",
+	"description": "An HTML5 single page website template. This is a single page website template for a Production Company Introduction. The website has a fully responsive header area, products section, mission statement, contact area with WhatsApp, Google maps and call links, gallery section, and footer section. This website template can be used by any steel melter company to showcase their products, services, and company information.",
+	"private": true,
+	"version": "2.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build --emptyOutDir",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint .",
+		"build-bootstrap": "sass --no-source-map ./src/styles/bs-dynamic.scss ./src/styles/bootstrap.css"
+	},
+	"devDependencies": {
+		"@eslint/compat": "^1.2.9",
+		"@eslint/js": "^9.27.0",
+		"@sveltejs/adapter-auto": "^6.0.1",
+		"@sveltejs/adapter-static": "^3.0.8",
+		"@sveltejs/kit": "^2.21.1",
+		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"autoprefixer": "^10.4.21",
+		"cssnano": "^7.0.7",
+		"eslint": "^9.27.0",
+		"eslint-config-prettier": "^10.1.5",
+		"eslint-plugin-svelte": "^3.9.0",
+		"globals": "^16.1.0",
+		"prettier": "^3.5.3",
+		"prettier-plugin-svelte": "^3.4.0",
+		"sass-embedded": "^1.89.0",
+		"svelte": "^5.33.1",
+		"terser": "^5.39.2",
+		"vite": "^6.3.5",
+		"vite-plugin-purgecss": "^0.2.13",
+		"vite-plugin-webfont-dl": "^3.10.4"
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.6",
+		"boxicons": "^2.1.4"
+	}
 }
