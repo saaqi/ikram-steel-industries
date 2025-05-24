@@ -6,7 +6,7 @@
 
 	import LoadingAnimation from '$components/LoadingAnimation.svelte';
 	import Navigation from '$components/Navigation.svelte';
-	// import Footer from '$components/Footer.svelte';
+	import Footer from '$components/Footer.svelte';
 </script>
 
 <LoadingAnimation />
@@ -17,4 +17,4 @@
 	{@render children()}
 </main>
 
-<!-- <Footer /> -->
+<Footer />
