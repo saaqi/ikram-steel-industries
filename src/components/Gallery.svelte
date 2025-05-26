@@ -45,7 +45,7 @@ console.log(galleryKeys)
 	<div class="container">
 		<h3 class="section-heading h4"><i class="bx bx-images"></i> Gallery</h3>
 		<div id="homegallery" class="homegallery row g-3">
-			{#each galleryKeys as image}
+			{#each galleryKeys as image, index( 'galleryImage' + index)}
 				<a class="col-6 col-lg-3" href={image.img.src} data-fslightbox="gallery" aria-label={'label'}>
 					<enhanced:img
 						class="img-fluid rounded shadow-sm border border-primary-subtle"
