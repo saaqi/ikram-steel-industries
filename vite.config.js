@@ -1,6 +1,7 @@
 // const IN_PRODUCTION = process.env.NODE_ENV === 'production';
 import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { enhancedImages } from '@sveltejs/enhanced-img';
 import path from 'path';
 import htmlPurge from 'vite-plugin-purgecss';
 import autoprefixer from 'autoprefixer';
@@ -9,6 +10,7 @@ const bootstrap = 'node_modules/bootstrap';
 
 export default defineConfig({
 	plugins: [
+		enhancedImages(),
 		sveltekit(),
 		htmlPurge({
 			content: [

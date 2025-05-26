@@ -1,8 +1,8 @@
 <script>
-	import basharatButt from '$assets/team/basharat_butt.webp';
-	import javedButt from '$assets/team/javed_butt.webp';
-	import TariqButt from '$assets/team/tariq_butt.webp';
-	import saleemButt from '$assets/team/saleem_butt.webp';
+	import basharatButt from '$assets/team/basharat_butt.webp?enhanced';
+	import javedButt from '$assets/team/javed_butt.webp?enhanced';
+	import TariqButt from '$assets/team/tariq_butt.webp?enhanced';
+	import saleemButt from '$assets/team/saleem_butt.webp?enhanced';
 </script>
 
 <section id="our-team" class="our-team">
@@ -16,7 +16,7 @@
 					</div>
 					<div class="card-body d-flex flex-column align-items-center align-items-sm-start">
 						<h5 class="names">Basharat Ali Butt</h5>
-						<img
+						<enhanced:img
 							class="img-fluid rounded shadow-sm"
 							src={basharatButt}
 							loading="lazy"
@@ -33,7 +33,7 @@
 					</div>
 					<div class="card-body d-flex flex-column align-items-center align-items-sm-start">
 						<h5 class="names">Javed Butt</h5>
-						<img
+						<enhanced:img
 							class="img-fluid rounded shadow-sm"
 							src={javedButt}
 							loading="lazy"
@@ -61,7 +61,7 @@
 					</div>
 					<div class="card-body d-flex flex-column align-items-center align-items-sm-start">
 						<h5 class="names">Tariq Butt</h5>
-						<img
+						<enhanced:img
 							class="img-fluid rounded shadow-sm"
 							src={TariqButt}
 							loading="lazy"
@@ -78,7 +78,7 @@
 					</div>
 					<div class="card-body d-flex flex-column align-items-center align-items-sm-start">
 						<h5 class="names">Abdul Saleem</h5>
-						<img
+						<enhanced:img
 							class="img-fluid rounded shadow-sm"
 							src={saleemButt}
 							loading="lazy"
