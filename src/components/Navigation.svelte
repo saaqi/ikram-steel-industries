@@ -1,5 +1,4 @@
 <script>
-	import '$components/navigation.scss'
 	import isiLogo from '$assets/isi_logo.svg';
 	import { navItems } from './navItems.js';
 	import { onMount } from 'svelte';
