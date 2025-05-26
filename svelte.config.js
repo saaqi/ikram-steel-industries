@@ -22,10 +22,10 @@ const config = {
 			base: ''
 		},
 		alias: {
-			$components: "src/components",
-			$styles: "src/styles",
-			$assets: "src/assets",
-		},
+			$components: 'src/components',
+			$styles: 'src/styles',
+			$assets: 'src/assets'
+		}
 	}
 };
 

@@ -24,9 +24,8 @@
 
 		if (!groupedImages[baseName]) groupedImages[baseName] = {};
 
-		isThumb
-			? (groupedImages[baseName].thumb = fullPath)
-			: (groupedImages[baseName].image = fullPath);
+		// isThumb? (groupedImages[baseName].thumb = fullPath) : (groupedImages[baseName].image = fullPath);
+		groupedImages[baseName][isThumb ? 'thumb' : 'image'] = fullPath;
 	}
 
 	// Convert the grouped image objects into a structured array

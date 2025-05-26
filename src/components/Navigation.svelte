@@ -1,7 +1,9 @@
 <script>
 	import './Navigation.scss';
 	import isiLogo from '$assets/isi_logo.svg';
+	import { navItems } from './navItems.js';
 	import { onMount } from 'svelte';
+	onMount(async () => await import('./navigation.js'));
 
 	// import { onNavigate } from '$app/navigation';
 	// onNavigate((navigation) => {
@@ -17,20 +19,6 @@
 	// 		});
 	// 	});
 	// });
-
-	onMount(() => {
-		window.addEventListener('scroll', () => {
-			if (window.scrollY >= 150) {
-				document.querySelector('body').classList.add('dark');
-			} else {
-				document.querySelector('body').classList.remove('dark');
-			}
-		});
-	});
-
-	onMount(async () => {
-		await import('./Navigation.js')
-	});
 </script>
 
 <header class="site-header">
@@ -67,43 +55,15 @@
 			itemtype="https://schema.org/SiteNavigationElement"
 		>
 			<ul id="primary-menu" class="primary-menu list-unstyled mb-lg-0">
-				<li class="menu-item active">
-					<a href="#home">
-						<i class="bx bx-home"></i> Home
-					</a>
-				</li>
-				<li class="menu-item">
-					<a href="#our-products">
-						<i class="bx bx-shopping-bag"></i> Products
-					</a>
-				</li>
-				<li class="menu-item">
-					<a href="#why-us">
-						<i class="bx bx-certification"></i> Why Us!
-					</a>
-				</li>
-				<li class="menu-item">
-					<a href="#our-team">
-						<i class="bx bx-user-pin"></i> Our Team
-					</a>
-				</li>
-				<li class="menu-item">
-					<a href="#testimonials">
-						<i class="bx bx-user-circle"></i> Testimonials
-					</a>
-				</li>
-				<li class="menu-item">
-					<a href="#gallery-section">
-						<i class="bx bx-images"></i> Gallery
-					</a>
-				</li>
-				<li class="menu-item">
-					<a href="#contact-us">
-						<i class="bx bxs-contact"></i> Contact Us!
-					</a>
-				</li>
+				{#each navItems as { href, text, icon }, index ('nav-item-' + index)}
+					<li class="menu-item">
+						<a {href}>
+							<i class="bx {icon}"></i>
+							{text}
+						</a>
+					</li>
+				{/each}
 			</ul>
 		</nav>
 	</div>
 </header>
-

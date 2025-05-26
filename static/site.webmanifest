@@ -1,19 +1,19 @@
 {
-    "name": "Ikram Steel Industries and Re-Rolling Mills",
-    "short_name": "Ikram Steel",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#45474b",
-    "background_color": "#45474b",
-    "display": "standalone"
+	"name": "Ikram Steel Industries and Re-Rolling Mills",
+	"short_name": "Ikram Steel",
+	"icons": [
+		{
+			"src": "/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"theme_color": "#45474b",
+	"background_color": "#45474b",
+	"display": "standalone"
 }

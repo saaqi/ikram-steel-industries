@@ -1,5 +1,6 @@
 <script>
-  import isiLogo from '$assets/isi_logo.svg';
+	import isiLogo from '$assets/isi_logo.svg';
+	import { navItems } from './navItems.js';
 </script>
 
 <footer class="site-footer bg-warning pt-5 pb-2">
@@ -17,41 +18,14 @@
 			<div class="col-lg-4 col-sm-6">
 				<h4 class="mb-4 border-bottom border-primary pb-2">Sitemap.</h4>
 				<ul class="list-unstyled row g-3">
-					<li class="menu-item active">
-						<a class="fw-medium" href="#home">
-							<i class="bx bx-home"></i> Home
-						</a>
-					</li>
-					<li class="menu-item">
-						<a class="fw-medium" href="#our-products">
-							<i class="bx bxs-shopping-bag-alt"></i> Products
-						</a>
-					</li>
-					<li class="menu-item">
-						<a class="fw-medium" href="#why-us">
-							<i class="bx bxs-certification"></i> Why Us!
-						</a>
-					</li>
-					<li class="menu-item">
-						<a class="fw-medium" href="#our-team">
-							<i class="bx bx-user-pin"></i> Our Team
-						</a>
-					</li>
-					<li class="menu-item">
-						<a href="#testimonials">
-							<i class="bx bx-user-circle"></i> Testimonials
-						</a>
-					</li>
-					<li class="menu-item">
-						<a class="fw-medium" href="#gallery-section">
-							<i class="bx bx-images"></i> Gallery
-						</a>
-					</li>
-					<li class="menu-item">
-						<a class="fw-medium" href="#contact-us">
-							<i class="bx bxs-contact"></i> Contact Us!
-						</a>
-					</li>
+					{#each navItems as { href, text, icon }, index ('sitemap-item-' + index)}
+						<li class="menu-item">
+							<a class="fw-medium" {href}>
+								<i class="bx {icon}"></i>
+								{text}
+							</a>
+						</li>
+					{/each}
 				</ul>
 			</div>
 			<div class="col-lg-4 col-sm-6">

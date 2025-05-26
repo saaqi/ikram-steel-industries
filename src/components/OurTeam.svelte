@@ -1,8 +1,8 @@
 <script>
-  import basharatButt from '$assets/team/basharat_butt.webp'
-  import javedButt from '$assets/team/javed_butt.webp'
-  import TariqButt from '$assets/team/tariq_butt.webp'
-  import saleemButt from '$assets/team/saleem_butt.webp'
+	import basharatButt from '$assets/team/basharat_butt.webp';
+	import javedButt from '$assets/team/javed_butt.webp';
+	import TariqButt from '$assets/team/tariq_butt.webp';
+	import saleemButt from '$assets/team/saleem_butt.webp';
 </script>
 
 <section id="our-team" class="our-team">
