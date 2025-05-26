@@ -1,5 +1,10 @@
 <script>
 	import Home from '$components/Home.svelte';
+	import Products from '$components/Products.svelte';
+	import WhyUs from '$components/WhyUs.svelte';
+	import OurTeam from '$components/OurTeam.svelte';
+	import Testimonials from '$components/Testimonials.svelte';
+	import Gallery from '$components/Gallery.svelte';
 </script>
 
 <svelte:head>
@@ -9,3 +14,8 @@
 </svelte:head>
 
 <Home />
+<Products />
+<WhyUs />
+<OurTeam />
+<Testimonials />
+<Gallery />
