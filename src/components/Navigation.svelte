@@ -1,9 +1,9 @@
 <script>
-	import '$components/navigation.scss'
+	import './navigation.scss'
 	import isiLogo from '$assets/isi_logo.svg';
 	import { navItems } from './navItems.js';
 	import { onMount } from 'svelte';
-	onMount(async () => await import('$components/navigation.js'));
+	onMount(async () => await import('./navigation.js'));
 
 	// import { onNavigate } from '$app/navigation';
 	// onNavigate((navigation) => {
