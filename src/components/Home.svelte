@@ -46,7 +46,7 @@
             title="Follow us on Facebook!">
             <i class='bx bxl-facebook-square'></i>
           </a> -->
-					{#each socialLinks as { href, icon, title }}
+					{#each socialLinks as { href, icon, title }, index ('socialLink-' + index)}
 						<a
 							class="fs-2 link-light"
 							{href}

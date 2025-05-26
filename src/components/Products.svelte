@@ -73,7 +73,7 @@
 							</p>
 							<h5 class="h6">Avialable Sizes:</h5>
 							<ul class="row g-2">
-								{#each sizes as size}
+								{#each sizes as size, index ('availsize-' + index)}
 									<li>{size}</li>
 								{/each}
 							</ul>
