@@ -1,6 +1,8 @@
 const IN_PRODUCTION = process.env.NODE_ENV === 'production';
 import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
+import path from 'path';
+
 import webfontDownload from 'vite-plugin-webfont-dl';
 // import { purgeCSSPlugin } from '@fullhuman/postcss-purgecss';
 import htmlPurge from 'vite-plugin-purgecss';
@@ -46,6 +48,15 @@ export default defineConfig({
 				'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'
 			])
 	],
+
+	resolve: {
+		alias: {
+			$lib: path.resolve('./src/lib'),
+			$components: path.resolve('./src/components'),
+			$styles: path.resolve('./src/styles'),
+			$assets: path.resolve('./src/assets')
+		}
+	},
 
 	css: {
 		preprocessorOptions: {
