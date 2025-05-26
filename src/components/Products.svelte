@@ -1,7 +1,7 @@
 <script>
-  import rebars60Thumb from '$assets/gallery/rebars-60_thumb-n.webp'
-  import rebars40Thumb from '$assets/gallery/rebars-40-thumb.webp'
-  import steelBilletsThumb from '$assets/gallery/steel-billets-thumb.webp'
+  import rebars60Thumb from '$assets/gallery/rebars60Thumb.webp'
+  import rebars40Thumb from '$assets/gallery/rebars40Thumb.webp'
+  import steelBilletsThumb from '$assets/gallery/steelBilletsThumb.webp'
 </script>
 
 <section id="our-products" class="our-products">

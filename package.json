@@ -37,6 +37,7 @@
 	},
 	"dependencies": {
 		"bootstrap": "^5.3.6",
-		"boxicons": "^2.1.4"
+		"boxicons": "^2.1.4",
+		"fslightbox": "^3.6.0"
 	}
 }

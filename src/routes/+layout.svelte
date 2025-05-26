@@ -10,11 +10,8 @@
 </script>
 
 <LoadingAnimation />
-
 <Navigation />
-
 <main>
 	{@render children()}
 </main>
-
 <Footer />

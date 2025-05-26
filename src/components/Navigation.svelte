@@ -1,9 +1,9 @@
 <script>
-	import { onNavigate } from '$app/navigation';
 	import './Navigation.scss';
 	import isiLogo from '$assets/isi_logo.svg';
 	import { onMount } from 'svelte';
 
+	// import { onNavigate } from '$app/navigation';
 	// onNavigate((navigation) => {
 	// 	if (!document.startViewTransition) return;
 	// 	// Prevent animation if navigating to the same URL

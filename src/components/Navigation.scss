@@ -1,10 +1,12 @@
 /* Site Header
 --------------------------------------------- */
 .site-header {
+	background-color: var(--bs-warning);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 	left: 0;
 	position: fixed;
 	top: 0;
-	transition: all 0.3s ease-out;
+	transition: all ease-in-out 0.3s;
 	width: 100%;
 	z-index: 99;
 
@@ -28,23 +30,10 @@
 	justify-content: flex-end;
 
 	.menu-item a {
-		color: var(--bs-warning);
+		color: #333;
 		font-weight: 500;
 		letter-spacing: 0.5px;
 		text-decoration: none;
-	}
-}
-
-.dark {
-	.site-header {
-		background-color: var(--bs-warning);
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-		transition: all 0.3s ease-in;
-	}
-
-	.primary-menu .menu-item a {
-		color: #333;
-
 		&.active,
 		&:hover {
 			color: var(--bs-info);
