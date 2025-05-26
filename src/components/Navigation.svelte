@@ -5,8 +5,7 @@
 	// onMount(async () => await import('$components/navigation.js'));
 
 	onMount(async () => {
-		/* ## Set Mobile Navigation stuff
---------------------------------------------- */
+		/* ## Set Mobile Navigation stuff -------------------------------------------- */
 		// selecting the element
 		const navLinks = document.querySelectorAll(
 			'.primary-menu .menu-item a, .go-top a, .site-title a, .shop-link'
@@ -60,8 +59,7 @@
 		navigation.setAttribute('tabindex', '-1');
 		navigation.setAttribute('aria-hidden', 'true');
 
-		/* ## SETUP SCROLL SPY
---------------------------------------------- */
+		/* ## SETUP SCROLL SPY --------------------------------------------- */
 		let menuSection = document.querySelectorAll('.nav-primary li.menu-item a');
 		// for clickable event
 		menuSection.forEach((v) => {

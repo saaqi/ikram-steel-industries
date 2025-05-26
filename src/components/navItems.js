@@ -1,7 +1,7 @@
 export const navItems = [
 	{
 		href: '#home',
-		text: 'home',
+		text: 'Home',
 		icon: 'bx-home'
 	},
 	{
@@ -22,7 +22,7 @@ export const navItems = [
 	{
 		href: '#testimonials',
 		text: 'Testimonials',
-		icon: 'bx-user-circl'
+		icon: 'bx-user-circle'
 	},
 	{
 		href: '#gallery-section',

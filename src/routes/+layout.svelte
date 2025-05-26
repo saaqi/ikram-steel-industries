@@ -1,6 +1,7 @@
 <script>
 	// !Important: Do not remove.
 	const { children } = $props();
+	import '@fontsource-variable/inter';
 	import '$styles/style.scss';
 	import 'boxicons/css/boxicons.min.css';
 

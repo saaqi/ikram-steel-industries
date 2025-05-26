@@ -1,10 +1,7 @@
-const IN_PRODUCTION = process.env.NODE_ENV === 'production';
+// const IN_PRODUCTION = process.env.NODE_ENV === 'production';
 import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import path from 'path';
-
-import webfontDownload from 'vite-plugin-webfont-dl';
-// import { purgeCSSPlugin } from '@fullhuman/postcss-purgecss';
 import htmlPurge from 'vite-plugin-purgecss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
@@ -40,13 +37,7 @@ export default defineConfig({
 			},
 			keyframes: true,
 			variables: true
-		}),
-
-		/* ## Download Google Fonts and attach them with production build for offline use */
-		IN_PRODUCTION &&
-			webfontDownload([
-				'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'
-			])
+		})
 	],
 
 	resolve: {
