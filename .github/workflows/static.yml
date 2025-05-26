@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: 'sveltekit'
+    branches: 'main'
 
 jobs:
   build_site:
