@@ -66,7 +66,7 @@
 						<i class="bx bxs-phone-call"></i> Call Now!
 					</a>
 					<a
-						class="btn btn-outline-light btn-lg fw-medium"
+						class="btn btn-light btn-lg fw-medium"
 						href="https://goo.gl/maps/VXY4dq9Ta4on3sor7"
 						target="_blank"
 					>
@@ -87,7 +87,7 @@
 			background-repeat: repeat;
 			background-attachment: fixed;
 			background-size: 60px;
-			filter: brightness(80%);
+			filter: brightness(70%);
 			position: absolute;
 			height: 100%;
 			width: 100%;
