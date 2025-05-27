@@ -20,7 +20,7 @@
 	<meta name="robots" content="noindex, follow" />
 </svelte:head>
 
-<div class="container pt-5">
+<div class="container py-5">
 	<div id="notfound" class="container text-center py-3">
 		<div class="notfound-404">
 			<h1 class="display-4 fw-bold">OOPS! <span>{emojis[page.status] ?? emojis[500]}</span></h1>
@@ -31,7 +31,7 @@
 			exist at all. Before you venture further, double-check the URL in your browser. If all seems
 			well, consider navigating back to our homepage to explore anew. Thanks for your understanding!
 		</p>
-		<a class="btn-light btn btn-lg" href="{base}/">Go To Homepage</a>
+		<a class="btn-primary btn btn-lg" href="{base}/">Go To Homepage</a>
 	</div>
 </div>
 
