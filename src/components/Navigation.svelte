@@ -7,12 +7,8 @@
 	const onclick = () => menuExpanded.set(!$menuExpanded);
 	const close = () => menuExpanded.set(false);
 
+	/* ## SETUP SCROLL SPY --------------------------------------------- */
 	onMount(async () => {
-		/* ## Set Mobile Navigation stuff -------------------------------------------- */
-		// selecting the element
-		const navigation = document.querySelector('nav.nav-primary');
-
-		/* ## SETUP SCROLL SPY --------------------------------------------- */
 		let menuSection = document.querySelectorAll('.nav-primary li.menu-item a');
 		// for clickable event
 		menuSection.forEach((v) => {
@@ -96,9 +92,9 @@
 			itemtype="https://schema.org/SiteNavigationElement"
 		>
 			<ul id="primary-menu" class="primary-menu list-unstyled mb-lg-0">
-				{#each navItems as { href, text, icon }, index ('nav-item-' + index)}
+				{#each navItems as { href, text, icon, active }, index ('nav-item-' + index)}
 					<li class="menu-item">
-						<a {href} onclick={close}>
+						<a {href} onclick={close} class={active ? 'active' : ''}>
 							<i class="bx {icon}"></i>
 							{text}
 						</a>
@@ -109,3 +105,133 @@
 	</div>
 </header>
 <div class="navSpacer"></div>
+
+<style lang="scss">
+	.navSpacer {
+		height: 63px;
+	}
+	.site-header {
+		background-color: var(--bs-warning);
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+		left: 0;
+		position: fixed;
+		top: 0;
+		transition: all ease-in-out 0.3s;
+		width: 100%;
+		z-index: 99;
+
+		.flex {
+			align-items: center;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		.shop-link {
+			font-size: 2em;
+			line-height: 0;
+		}
+	}
+
+	.primary-menu {
+		display: flex;
+		flex-direction: row;
+		gap: 2rem;
+		justify-content: flex-end;
+
+		.menu-item a {
+			color: #333;
+			font-weight: 500;
+			letter-spacing: 0.5px;
+			text-transform: capitalize;
+			text-decoration: none;
+			&:hover,
+			&.active {
+				color: var(--bs-info);
+				text-shadow: 1px 1px 2px rgba(#333, 0.5);
+			}
+		}
+	}
+
+	/* For Large Devices only */
+	@media only screen and (min-width: 993px) {
+		.shop-link {
+			display: none;
+		}
+
+		.menu-toggle {
+			display: none;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.nav-primary {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	/* For Small Devices only */
+	@media only screen and (max-width: 992px) {
+		.site-header {
+			background-color: var(--bs-warning);
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+		}
+
+		.primary-menu {
+			flex-direction: column;
+			justify-content: flex-start;
+			padding: 0 0 1rem 2rem;
+		}
+
+		.nav-primary {
+			max-height: 0;
+			overflow-y: scroll;
+			transition: all 0.15s ease-out;
+			visibility: hidden;
+			opacity: 0;
+			width: 100%;
+
+			&.show {
+				margin-top: 1rem;
+				max-height: 100vh;
+				transition: all 0.2s ease-in-out;
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		.shop-link {
+			display: block;
+		}
+
+		.menu-toggle {
+			background: transparent;
+			border: none;
+			padding: 0;
+		}
+
+		.primary-menu .menu-item a {
+			color: #333;
+
+			&:hover {
+				color: var(--bs-info);
+				text-shadow: 1px 1px 2px rgba(#333, 0.5);
+			}
+		}
+
+		.toggle-icon::before {
+			display: inline-block;
+			padding-right: 0;
+			padding-top: 0.4rem;
+			text-rendering: auto;
+			transform: rotate(0);
+			transition: transform 0.25s ease-in-out;
+		}
+
+		.activated .toggle-icon::before {
+			transform: rotateY(180deg);
+		}
+	}
+</style>

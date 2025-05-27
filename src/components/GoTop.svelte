@@ -37,7 +37,6 @@
 		z-index: 2;
 		line-height: 0;
 	}
-
 	.go-top a::before {
 		padding: 0;
 	}
