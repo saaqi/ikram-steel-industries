@@ -2,7 +2,7 @@
 	"name": "ikram-steel-industries",
 	"description": "An HTML5 single page website template. This is a single page website template for a Production Company Introduction. The website has a fully responsive header area, products section, mission statement, contact area with WhatsApp, Google maps and call links, gallery section, and footer section. This website template can be used by any steel melter company to showcase their products, services, and company information.",
 	"private": true,
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
