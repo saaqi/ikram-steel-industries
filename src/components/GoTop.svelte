@@ -2,6 +2,7 @@
 	// import '$styles/toplink.scss';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { menuExpanded } from './sharedState.js';
 
 	let show = false;
 	onMount(() => {
@@ -18,6 +19,9 @@
 			href="#home"
 			title="Go to Top"
 			aria-label="Go to Top"
+			onclick={() => {
+				menuExpanded.set(false);
+			}}
 		>
 			<i class="bx bx-arrow-to-top"></i>
 		</a>

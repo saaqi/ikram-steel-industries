@@ -2,31 +2,15 @@
 	import isiLogo from '$assets/isi_logo.svg';
 	import { navItems } from './navItems.js';
 	import { onMount } from 'svelte';
+	import { menuExpanded } from './sharedState.js';
 
-	let expanded = $state(false);
-	const onclick = () => {
-		expanded = !expanded;
-	};
-	const close = () => {
-		expanded = false;
-	};
+	const onclick = () => menuExpanded.set(!$menuExpanded);
+	const close = () => menuExpanded.set(false);
 
 	onMount(async () => {
 		/* ## Set Mobile Navigation stuff -------------------------------------------- */
 		// selecting the element
-		const menuButton = document.querySelector('.menu-toggle');
 		const navigation = document.querySelector('nav.nav-primary');
-		const toggleIcon = document.querySelector('.toggle-icon');
-
-		// const navLinks = document.querySelectorAll('.go-top a');
-		// navLinks.forEach(link => {
-		// 	link.addEventListener('click', () => {
-		// 		expanded = false;
-		// 	});
-		// })
-
-		navigation.setAttribute('tabindex', '-1');
-		navigation.setAttribute('aria-hidden', 'true');
 
 		/* ## SETUP SCROLL SPY --------------------------------------------- */
 		let menuSection = document.querySelectorAll('.nav-primary li.menu-item a');
@@ -96,17 +80,17 @@
 		</div>
 		<!-- Main Navigation -->
 		<button
-			class="menu-toggle link-primary {expanded ? 'activated' : ''}"
+			class="menu-toggle link-primary {$menuExpanded ? 'activated' : ''}"
 			aria-label="Navigation Menu Button"
-			aria-expanded={expanded ? 'true' : 'false'}
-			aria-pressed={expanded ? 'true' : 'false'}
+			aria-expanded={$menuExpanded ? 'true' : 'false'}
+			aria-pressed={$menuExpanded ? 'true' : 'false'}
 			title="Navigation Menu"
 			{onclick}
 		>
-			<i class="bx {expanded ? 'bx-x' : 'bx-menu'} toggle-icon" style="font-size: 2em"></i>
+			<i class="bx {$menuExpanded ? 'bx-x' : 'bx-menu'} toggle-icon" style="font-size: 2em"></i>
 		</button>
 		<nav
-			class="nav-primary {expanded ? 'show' : ''}"
+			class="nav-primary {$menuExpanded ? 'show' : ''}"
 			aria-label="Primary Navigation"
 			itemscope
 			itemtype="https://schema.org/SiteNavigationElement"

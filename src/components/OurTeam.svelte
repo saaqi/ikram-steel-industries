@@ -31,13 +31,7 @@
 					<div class="card-header">
 						<h4 class="h6 mb-0 text-center h5">Chief Executive Officer</h4>
 					</div>
-					<img
-						class="img-fluid"
-						src={javedButt}
-						loading="lazy"
-						alt="Mr. Javed Butt"
-						height="300"
-					/>
+					<img class="img-fluid" src={javedButt} loading="lazy" alt="Mr. Javed Butt" height="300" />
 					<div class="card-body d-flex flex-column align-items-center align-items-sm-start">
 						<h5 class="names">Javed Butt</h5>
 						<ul class="team-contact list-unstyled mt-3">
@@ -45,10 +39,7 @@
 								<a href="tel:+923008644389"><i class="bx bxs-mobile"></i> 0300-8644389</a>
 							</li>
 							<li class="mb-3">
-								<a
-									href="https://wa.me/+923008644389"
-									target="_blank"
-								>
+								<a href="https://wa.me/+923008644389" target="_blank">
 									<i class="bx bxl-whatsapp-square"></i> WhatsApp
 								</a>
 							</li>
@@ -61,13 +52,7 @@
 					<div class="card-header">
 						<h4 class="h6 mb-0 text-center h5">Chief Operating Officer</h4>
 					</div>
-					<img
-						class="img-fluid"
-						src={TariqButt}
-						loading="lazy"
-						alt="Mr. Tariq Butt"
-						height="300"
-					/>
+					<img class="img-fluid" src={TariqButt} loading="lazy" alt="Mr. Tariq Butt" height="300" />
 					<div class="card-body d-flex flex-column align-items-center align-items-sm-start">
 						<h5 class="names">Tariq Butt</h5>
 					</div>
