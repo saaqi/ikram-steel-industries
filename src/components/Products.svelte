@@ -58,7 +58,7 @@
 				<div class="product-widget col-sm-6 col-lg-4">
 					<div class="card bg-info-subtle h-100 shadow">
 						<img
-							class="card-img-top shadow-sm"
+							class="card-img-top shadow-sm img-fluid"
 							src={image}
 							draggable="false"
 							loading="lazy"
