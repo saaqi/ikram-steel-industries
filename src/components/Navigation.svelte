@@ -53,18 +53,12 @@
 
 <header class="site-header">
 	<div class="container flex">
-		<a
-			href="#our-products"
-			class="shop-link"
-			title="Shop Link"
-			aria-label="Shop Link"
-			onclick={close}
-		>
+		<a href="/products" class="shop-link" title="Shop Link" aria-label="Shop Link" onclick={close}>
 			<i class="bx bx-store"></i>
 		</a>
 		<!-- SITE LOGO -->
 		<div class="title-area site-title py-1">
-			<a href="#home" title="Ïkram Steel Industries Home Section" onclick={close}>
+			<a href="/" title="Ïkram Steel Industries Home Section" onclick={close}>
 				<img
 					src={isiLogo}
 					alt="Ikram Steel Industries & Re-Rolling Mills"

@@ -21,9 +21,9 @@
 			onclick={() => {
 				menuExpanded.set(false);
 				window.scrollTo({
-           top: 0,
-           behavior: "smooth",
-       });
+					top: 0,
+					behavior: 'smooth'
+				});
 			}}
 		>
 			<i class="bx bx-arrow-to-top"></i>

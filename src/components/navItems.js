@@ -1,14 +1,14 @@
 export const navItems = [
 	{
-		href: '/',
 		tag: '#home',
+		href: '/',
 		text: 'Home',
 		icon: 'bx-home',
 		active: true
 	},
 	{
-		href: '/products',
 		tag: '#our-products',
+		href: '/products',
 		text: 'Products',
 		icon: 'bx-shopping-bag'
 	},
@@ -31,13 +31,13 @@ export const navItems = [
 		icon: 'bx-user-circle'
 	},
 	{
-		tag: '/#gallery',
+		tag: '#gallery',
 		href: '/gallery',
 		text: 'Gallery',
 		icon: 'bx-images'
 	},
 	{
-		tag: '/#contact-us',
+		tag: '#contact-us',
 		href: '/contact-us',
 		text: 'Contact Us!',
 		icon: 'bx-user-pin'

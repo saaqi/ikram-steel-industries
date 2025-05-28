@@ -1,7 +1,7 @@
 <script>
 	import BillBoard from '$components/BillBoard.svelte';
 	import Gallery from '$components/Gallery.svelte';
-	import billboard from '$assets/gallery/rebars40.webp'
+	import billboard from '$assets/gallery/rebars40.webp';
 </script>
 
 <svelte:head>
