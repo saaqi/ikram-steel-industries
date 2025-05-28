@@ -36,7 +36,7 @@
 	}));
 </script>
 
-<section id="gallery-section" class="gallery-section">
+<section id="gallery" class="gallery-section">
 	<div class="container">
 		<h3 class="section-heading h4"><i class="bx bx-images"></i> Gallery</h3>
 		<div id="homegallery" class="homegallery row g-3">

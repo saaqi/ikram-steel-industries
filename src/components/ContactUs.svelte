@@ -1,8 +1,8 @@
 <section id="contact-us" class="contact-us">
 	<div class="container">
 		<div class="row g-5">
+			<h3 class="section-heading h4"><i class="bx bxs-contact"></i> Contact Us!</h3>
 			<div class="col-lg-6">
-				<h3 class="section-heading h4"><i class="bx bxs-contact"></i> Contact Us!</h3>
 				<ul class="address-contact list-unstyled row g-3">
 					<li>
 						<a href="https://goo.gl/maps/VXY4dq9Ta4on3sor7" target="_blank">

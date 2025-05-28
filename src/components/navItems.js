@@ -1,37 +1,44 @@
 export const navItems = [
 	{
-		href: '#home',
+		href: '/',
+		tag: '#home',
 		text: 'Home',
 		icon: 'bx-home',
 		active: true
 	},
 	{
-		href: '#our-products',
+		href: '/products',
+		tag: '#our-products',
 		text: 'Products',
 		icon: 'bx-shopping-bag'
 	},
 	{
-		href: '#why-us',
+		tag: '#why-us',
+		href: '/why-us',
 		text: 'Why Us!',
 		icon: 'bx-certification'
 	},
 	{
-		href: '#our-team',
+		tag: '#our-team',
+		href: '/our-team',
 		text: 'Our Team',
 		icon: 'bx-user-pin'
 	},
 	{
-		href: '#testimonials',
+		tag: '#testimonials',
+		href: '/testimonials',
 		text: 'Testimonials',
 		icon: 'bx-user-circle'
 	},
 	{
-		href: '#gallery-section',
+		tag: '/#gallery',
+		href: '/gallery',
 		text: 'Gallery',
 		icon: 'bx-images'
 	},
 	{
-		href: '#contact-us',
+		tag: '/#contact-us',
+		href: '/contact-us',
 		text: 'Contact Us!',
 		icon: 'bx-user-pin'
 	}

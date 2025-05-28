@@ -1,53 +1,53 @@
 <script>
 	import isiLogo from '$assets/isi_logo.svg';
 	import { navItems } from './navItems.js';
-	import { onMount } from 'svelte';
+	// import { onMount } from 'svelte';
 	import { menuExpanded } from './sharedState.js';
+
+	import { onNavigate } from '$app/navigation';
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+		// Prevent animation if navigating to the same URL
+		if (navigation.from?.url.pathname === navigation.to?.url.pathname) {
+			return;
+		}
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 
 	const onclick = () => menuExpanded.set(!$menuExpanded);
 	const close = () => menuExpanded.set(false);
 
 	/* ## SETUP SCROLL SPY --------------------------------------------- */
-	onMount(async () => {
-		let menuSection = document.querySelectorAll('.nav-primary li.menu-item a');
-		// for clickable event
-		menuSection.forEach((v) => {
-			v.onclick = () => {
-				setTimeout(() => {
-					menuSection.forEach((j) => j.classList.remove('active'));
-					v.classList.add('active');
-				}, 300);
-			};
-		});
-		// for window scrolldown event
-		window.onscroll = () => {
-			let mainSection = document.querySelectorAll('main section');
-
-			mainSection.forEach((v, i) => {
-				let rect = v.getBoundingClientRect().y;
-
-				if (rect < window.innerHeight - window.innerHeight + 56) {
-					/* caculate till section reaches to top */
-					menuSection.forEach((v) => v.classList.remove('active'));
-					menuSection[i].classList.add('active');
-				}
-			});
-		};
-	});
-
-	// import { onNavigate } from '$app/navigation';
-	// onNavigate((navigation) => {
-	// 	if (!document.startViewTransition) return;
-	// 	// Prevent animation if navigating to the same URL
-	// 	if (navigation.from?.url.pathname === navigation.to?.url.pathname) {
-	// 		return;
-	// 	}
-	// 	return new Promise((resolve) => {
-	// 		document.startViewTransition(async () => {
-	// 			resolve();
-	// 			await navigation.complete;
-	// 		});
+	// onMount(async () => {
+	// 	let menuSection = document.querySelectorAll('.nav-primary li.menu-item a');
+	// 	// for clickable event
+	// 	menuSection.forEach((v) => {
+	// 		v.onclick = () => {
+	// 			setTimeout(() => {
+	// 				menuSection.forEach((j) => j.classList.remove('active'));
+	// 				v.classList.add('active');
+	// 			}, 300);
+	// 		};
 	// 	});
+	// 	// for window scrolldown event
+	// 	window.onscroll = () => {
+	// 		let mainSection = document.querySelectorAll('main section');
+
+	// 		mainSection.forEach((v, i) => {
+	// 			let rect = v.getBoundingClientRect().y;
+
+	// 			if (rect < window.innerHeight - window.innerHeight + 56) {
+	// 				/* caculate till section reaches to top */
+	// 				menuSection.forEach((v) => v.classList.remove('active'));
+	// 				menuSection[i].classList.add('active');
+	// 			}
+	// 		});
+	// 	};
 	// });
 </script>
 
@@ -145,8 +145,7 @@
 			letter-spacing: 0.5px;
 			text-transform: capitalize;
 			text-decoration: none;
-			&:hover,
-			&.active {
+			&:hover {
 				color: var(--bs-info);
 				text-shadow: 1px 1px 2px rgba(#333, 0.5);
 			}
@@ -232,6 +231,46 @@
 
 		.activated .toggle-icon::before {
 			transform: rotateY(180deg);
+		}
+	}
+
+	/* Slide Trasnitions to the Navigation
+	------------------------------------ */
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 0.2s;
+		animation-timing-function: ease-in;
+	}
+
+	::view-transition-old(root) {
+		animation-name: slide-out-left;
+	}
+
+	::view-transition-new(root) {
+		animation-name: slide-in-right;
+	}
+
+	/* Slide Out to Left */
+	@keyframes slide-out-left {
+		from {
+			transform: translateY(0%);
+			opacity: 1;
+		}
+		to {
+			transform: translateY(-10%);
+			opacity: 0;
+		}
+	}
+
+	/* Slide In from Right */
+	@keyframes slide-in-right {
+		from {
+			transform: translateY(10%);
+			opacity: 0;
+		}
+		to {
+			transform: translateY(0%);
+			opacity: 1;
 		}
 	}
 </style>
