@@ -6,7 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build --emptyOutDir",
+		"build": "vite build --emptyOutDir && bun ./src/sitemap.js",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"format": "prettier --write .",
@@ -15,29 +15,30 @@
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.9",
-		"@eslint/js": "^9.27.0",
+		"@eslint/js": "^9.28.0",
+		"@fullhuman/postcss-purgecss": "^7.0.2",
 		"@sveltejs/adapter-auto": "^6.0.1",
 		"@sveltejs/adapter-static": "^3.0.8",
-		"@sveltejs/kit": "^2.21.1",
-		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"@sveltejs/kit": "^2.21.3",
+		"@sveltejs/vite-plugin-svelte": "^5.1.0",
 		"autoprefixer": "^10.4.21",
 		"cssnano": "^7.0.7",
-		"eslint": "^9.27.0",
+		"eslint": "^9.28.0",
 		"eslint-config-prettier": "^10.1.5",
-		"eslint-plugin-svelte": "^3.9.0",
+		"eslint-plugin-svelte": "^3.9.2",
 		"globals": "^16.2.0",
+		"postcss": "^8.5.4",
 		"prettier": "^3.5.3",
 		"prettier-plugin-svelte": "^3.4.0",
-		"sass-embedded": "^1.89.0",
-		"svelte": "^5.33.4",
-		"terser": "^5.40.0",
-		"vite": "^6.3.5",
-		"vite-plugin-purgecss": "^0.2.13"
+		"sass-embedded": "^1.89.2",
+		"svelte": "^5.33.18",
+		"terser": "^5.42.0",
+		"vite": "^6.3.5"
 	},
 	"dependencies": {
-		"@fontsource-variable/inter": "^5.2.5",
+		"@fontsource-variable/inter": "^5.2.6",
 		"bootstrap": "^5.3.6",
 		"boxicons": "^2.1.4",
-		"fslightbox": "^3.6.0"
+		"fslightbox": "^3.6.1"
 	}
 }
