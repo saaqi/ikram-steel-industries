@@ -6,10 +6,25 @@
 	});
 
 	// Import all .webp images from the gallery folder eagerly
-	const gallery = import.meta.glob('/src/assets/gallery/*.webp', {
+	// Files ending with Thumb.webp – use query params
+	const thumbs = import.meta.glob('/src/assets/gallery/*Thumb.webp', {
+		eager: true,
+		query: {
+			enhanced: true,
+			w: '450',
+			format: 'avif;webp'
+		},
+		import: 'default'
+	});
+
+	// All other .webp files – no query
+	const others = import.meta.glob('/src/assets/gallery/!(*Thumb).webp', {
 		eager: true,
 		import: 'default'
 	});
+
+	// Combine both into a single object (if needed)
+	const gallery = { ...thumbs, ...others };
 
 	// Convert the imported object into [filename, path] pairs
 	const entries = Object.entries(gallery);
@@ -41,15 +56,14 @@
 		<h3 class="section-heading h4"><i class="bx bx-images"></i> Gallery</h3>
 		<div id="homegallery" class="homegallery row g-3">
 			{#each galleryArray as { image, thumb, title }, index ('iks-gallery-' + index)}
-				<a class="col-6 col-lg-3" href={image} data-fslightbox="gallery">
-					<img
+				<a class="col-6 col-lg-3" href={image} data-fslightbox="gallery" aria-label={title}>
+					<enhanced:img
+						sizes="(min-width: 450px) 450px, 100vw"
 						class="img-fluid rounded shadow-sm border border-primary-subtle"
 						src={thumb}
 						draggable="false"
 						loading="lazy"
-						width="450"
 						alt={title}
-						height="253"
 					/>
 				</a>
 			{/each}

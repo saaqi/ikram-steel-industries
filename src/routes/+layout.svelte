@@ -12,7 +12,7 @@
 
 	// Canonical URL for SEO
 	import { page } from '$app/stores';
-	import { data } from '/src/app.js'
+	import { data } from '/src/app.js';
 	const baseUrl = data.baseURL;
 </script>
 

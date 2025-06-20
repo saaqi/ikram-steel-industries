@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Bootstrap  v5.3.6 (https://getbootstrap.com/)
+ * Bootstrap  v5.3.7 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
@@ -71,7 +71,7 @@
 	--bs-dark-border-subtle: #adb5bd;
 	--bs-white-rgb: 255, 255, 255;
 	--bs-black-rgb: 0, 0, 0;
-	--bs-font-sans-serif: Inter, 'sans-serif';
+	--bs-font-sans-serif: 'Inter Variable', 'sans-serif';
 	--bs-font-monospace:
 		SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 	--bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));

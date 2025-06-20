@@ -21,37 +21,9 @@
 
 	const onclick = () => menuExpanded.set(!$menuExpanded);
 	const close = () => menuExpanded.set(false);
-
-	/* ## SETUP SCROLL SPY --------------------------------------------- */
-	// onMount(async () => {
-	// 	let menuSection = document.querySelectorAll('.nav-primary li.menu-item a');
-	// 	// for clickable event
-	// 	menuSection.forEach((v) => {
-	// 		v.onclick = () => {
-	// 			setTimeout(() => {
-	// 				menuSection.forEach((j) => j.classList.remove('active'));
-	// 				v.classList.add('active');
-	// 			}, 300);
-	// 		};
-	// 	});
-	// 	// for window scrolldown event
-	// 	window.onscroll = () => {
-	// 		let mainSection = document.querySelectorAll('main section');
-
-	// 		mainSection.forEach((v, i) => {
-	// 			let rect = v.getBoundingClientRect().y;
-
-	// 			if (rect < window.innerHeight - window.innerHeight + 56) {
-	// 				/* caculate till section reaches to top */
-	// 				menuSection.forEach((v) => v.classList.remove('active'));
-	// 				menuSection[i].classList.add('active');
-	// 			}
-	// 		});
-	// 	};
-	// });
 </script>
 
-<header class="site-header">
+<header class="site-header bg-light">
 	<div class="container flex">
 		<a href="/products" class="shop-link" title="Shop Link" aria-label="Shop Link" onclick={close}>
 			<i class="bx bx-store"></i>
@@ -105,7 +77,6 @@
 		height: 63px;
 	}
 	.site-header {
-		background-color: var(--bs-warning);
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 		left: 0;
 		position: fixed;

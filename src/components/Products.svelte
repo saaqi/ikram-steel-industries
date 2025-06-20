@@ -1,7 +1,7 @@
 <script>
-	import rebars60Thumb from '$assets/gallery/rebars60Thumb.webp';
-	import rebars40Thumb from '$assets/gallery/rebars40Thumb.webp';
-	import steelBilletsThumb from '$assets/gallery/steelBilletsThumb.webp';
+	import rebars60Thumb from '$assets/gallery/rebars60Thumb.webp?enhanced&w=450&format=avif;webp';
+	import rebars40Thumb from '$assets/gallery/rebars40Thumb.webp?enhanced&w=450&format=avif;webp';
+	import steelBilletsThumb from '$assets/gallery/steelBilletsThumb.webp?enhanced&w=450&format=avif;webp';
 
 	const products = [
 		{
@@ -57,7 +57,8 @@
 			{#each products as { image, title, description, sizes }, index ('product-' + index)}
 				<div class="product-widget col-sm-6 col-lg-4">
 					<div class="card bg-info-subtle h-100 shadow">
-						<img
+						<enhanced:img
+							sizes="(min-width: 450px) 450px, 100vw"
 							class="card-img-top shadow-sm img-fluid"
 							src={image}
 							draggable="false"

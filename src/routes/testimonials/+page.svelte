@@ -1,7 +1,7 @@
 <script>
 	import BillBoard from '$components/BillBoard.svelte';
 	import Testimonials from '$components/Testimonials.svelte';
-	import billboard from '$assets/gallery/gallery05.webp';
+	import billboard from '$assets/gallery/gallery05.webp?enhanced&w=1600;800;400&format=avif;webp';
 </script>
 
 <svelte:head>

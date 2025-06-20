@@ -1,18 +1,16 @@
 // const IN_PRODUCTION = process.env.NODE_ENV === 'production';
 import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
-import path from 'path';
+import { enhancedImages } from '@sveltejs/enhanced-img';
 import { purgeCSSPlugin } from '@fullhuman/postcss-purgecss';
-const IN_PRODUCTION = process.env.NODE_ENV === 'production';
-
-import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
+import autoprefixer from 'autoprefixer';
+import path from 'path';
+const IN_PRODUCTION = process.env.NODE_ENV === 'production';
 const bootstrap = 'node_modules/bootstrap';
 
 export default defineConfig({
-	plugins: [
-		sveltekit(),
-	],
+	plugins: [enhancedImages(), sveltekit()],
 
 	resolve: {
 		alias: {
@@ -32,23 +30,18 @@ export default defineConfig({
 		postcss: {
 			plugins: IN_PRODUCTION
 				? [
-					purgeCSSPlugin({
-						content: [
-							'./src/app.html',
-							'./src/**/*.js',
-							'./src/**/*.svelte',
-							`${bootstrap}/js/dist/modal.js`
-						],
-						safelist: [/svelte-/, /modal-/],
-						defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-						keyframes: true,
-						variables: true
-					}),
-					cssnano({
-						preset: ['default', { discardComments: { removeAll: true } }]
-					}),
-					autoprefixer()
-				]
+						purgeCSSPlugin({
+							content: ['./src/app.html', './src/**/*.js', './src/**/*.svelte'],
+							safelist: [/svelte-/],
+							defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+							keyframes: true,
+							variables: true
+						}),
+						cssnano({
+							preset: ['default', { discardComments: { removeAll: true } }]
+						}),
+						autoprefixer()
+					]
 				: []
 		}
 	},
