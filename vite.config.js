@@ -7,7 +7,7 @@ import cssnano from 'cssnano';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
 const IN_PRODUCTION = process.env.NODE_ENV === 'production';
-const bootstrap = 'node_modules/bootstrap';
+// const bootstrap = 'node_modules/bootstrap';
 
 export default defineConfig({
 	plugins: [enhancedImages(), sveltekit()],

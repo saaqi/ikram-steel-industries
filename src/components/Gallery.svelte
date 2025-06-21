@@ -1,10 +1,4 @@
 <script>
-	// import gallery from './Gallery.json';
-	import { onMount } from 'svelte';
-	onMount(async () => {
-		await import('/node_modules/fslightbox');
-	});
-
 	// Import all .webp images from the gallery folder eagerly
 	// Files ending with Thumb.webp – use query params
 	const thumbs = import.meta.glob('/src/assets/gallery/*Thumb.webp', {
@@ -49,6 +43,11 @@
 		thumb: entry.thumb,
 		title: `Gallery Image ${index + 1}`
 	}));
+
+	import { onMount } from 'svelte';
+	onMount(async () => {
+		await import('/node_modules/fslightbox');
+	});
 </script>
 
 <section id="gallery" class="gallery-section">

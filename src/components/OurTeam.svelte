@@ -1,8 +1,8 @@
 <script>
-	import basharatButt from '$assets/team/basharat_butt.webp';
-	import javedButt from '$assets/team/javed_butt.webp';
-	import TariqButt from '$assets/team/tariq_butt.webp';
-	import saleemButt from '$assets/team/saleem_butt.webp';
+	import basharatButt from '$assets/team/basharat_butt.webp?enhanced&w=300&format=avif;webp';
+	import javedButt from '$assets/team/javed_butt.webp?enhanced&w=300&format=avif;webp';
+	import TariqButt from '$assets/team/tariq_butt.webp?enhanced&w=300&format=avif;webp';
+	import saleemButt from '$assets/team/saleem_butt.webp?enhanced&w=300&format=avif;webp';
 </script>
 
 <section id="our-team" class="our-team">
@@ -14,12 +14,12 @@
 					<div class="card-header">
 						<h4 class="h6 mb-0 text-center h5">Managing Director</h4>
 					</div>
-					<img
+					<enhanced:img
+						sizes="(min-width: 300px) 300px, 100vw"
 						class="img-fluid"
 						src={basharatButt}
 						loading="lazy"
 						alt="Mr. Basharat Ali"
-						height="300"
 					/>
 					<div class="card-body d-flex flex-column align-items-center align-items-sm-start">
 						<h5 class="names">Basharat Ali Butt</h5>
@@ -31,7 +31,13 @@
 					<div class="card-header">
 						<h4 class="h6 mb-0 text-center h5">Chief Executive Officer</h4>
 					</div>
-					<img class="img-fluid" src={javedButt} loading="lazy" alt="Mr. Javed Butt" height="300" />
+					<enhanced:img
+						sizes="(min-width: 300px) 300px, 100vw"
+						class="img-fluid"
+						src={javedButt}
+						loading="lazy"
+						alt="Mr. Javed Butt"
+					/>
 					<div class="card-body d-flex flex-column align-items-center align-items-sm-start">
 						<h5 class="names">Javed Butt</h5>
 						<ul class="team-contact list-unstyled mt-3">
@@ -52,7 +58,13 @@
 					<div class="card-header">
 						<h4 class="h6 mb-0 text-center h5">Chief Operating Officer</h4>
 					</div>
-					<img class="img-fluid" src={TariqButt} loading="lazy" alt="Mr. Tariq Butt" height="300" />
+					<enhanced:img
+						sizes="(min-width: 300px) 300px, 100vw"
+						class="img-fluid"
+						src={TariqButt}
+						loading="lazy"
+						alt="Mr. Tariq Butt"
+					/>
 					<div class="card-body d-flex flex-column align-items-center align-items-sm-start">
 						<h5 class="names">Tariq Butt</h5>
 					</div>
@@ -63,12 +75,12 @@
 					<div class="card-header">
 						<h4 class="h6 mb-0 text-center h5">Head of Finance</h4>
 					</div>
-					<img
+					<enhanced:img
+						sizes="(min-width: 300px) 300px, 100vw"
 						class="img-fluid"
 						src={saleemButt}
 						loading="lazy"
 						alt="Mr. Abdul Saleem"
-						height="300"
 					/>
 					<div class="card-body d-flex flex-column align-items-center align-items-sm-start">
 						<h5 class="names">Abdul Saleem</h5>
