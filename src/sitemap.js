@@ -58,5 +58,6 @@ const routes = getStaticRoutes();
 const sitemap = generateSitemap(routes);
 
 fs.writeFileSync('static/sitemap.xml', sitemap);
-fs.writeFileSync('build/sitemap.xml', sitemap);
-console.log('✅ Sitemap generated at build/sitemap.xml');
+fs.writeFileSync('.svelte-kit/output/client/sitemap.xml', sitemap);
+fs.writeFileSync('.cloudflare/public/sitemap.xml', sitemap);
+console.log('✅ Sitemap generated sitemap.xml');

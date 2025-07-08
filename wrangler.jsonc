@@ -1,0 +1,12 @@
+{
+	"name": "ikramsteel",
+	"compatibility_date": "2025-04-03",
+	"main": "./.cloudflare/worker.js",
+	"site": {
+		"bucket": "./.cloudflare/public"
+	},
+	"build": {
+		"command": "bun run build"
+	},
+	"routes": ["ikramsteel.com/*", "www.ikramsteel.com/*"]
+}
