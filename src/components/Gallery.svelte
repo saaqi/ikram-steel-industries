@@ -47,6 +47,7 @@
 	import { onMount } from 'svelte';
 	onMount(async () => {
 		await import('/node_modules/fslightbox');
+		refreshFsLightbox();
 	});
 </script>
 
