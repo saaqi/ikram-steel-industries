@@ -1,5 +1,4 @@
 <script>
-	import { resolve } from '$app/paths';
 	// Import all .webp images from the gallery folder eagerly
 	// Files ending with Thumb.webp – use query params
 	const thumbs = import.meta.glob('/src/assets/gallery/*Thumb.webp', {
@@ -69,7 +68,7 @@
 			{#each galleryArray as { image, thumb, title } (image)}
 				<a
 					class="col-6 col-lg-3"
-					href={resolve(image)}
+					href={image}
 					data-fslightbox="gallery"
 					aria-label={title}
 				>

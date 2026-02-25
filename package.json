@@ -8,6 +8,7 @@
 		"dev": "vite dev",
 		"build": "vite build --emptyOutDir",
 		"preview": "vite preview",
+		"deploy": "pnpm run build && wrangler deploy",
 		"prepare": "svelte-kit sync || echo ''",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
