@@ -46,11 +46,17 @@
 	}));
 
 	import { onMount } from 'svelte';
+
+	let fsLoaded = false;
+
 	onMount(async () => {
-		await import('/node_modules/fslightbox');
+		await import('fslightbox');
+		fsLoaded = true;
+		refreshFsLightbox();
 	});
+
 	$effect(() => {
-		if (typeof window !== 'undefined' && window.FsLightbox) {
+		if (fsLoaded) {
 			refreshFsLightbox();
 		}
 	});
