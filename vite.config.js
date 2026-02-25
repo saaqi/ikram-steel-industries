@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
-import { purgeCSSPlugin } from '@fullhuman/postcss-purgecss';
+import purgeCSSPlugin from '@fullhuman/postcss-purgecss';
 import cssnano from 'cssnano';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
@@ -22,11 +22,6 @@ export default defineConfig({
 	},
 
 	css: {
-		preprocessorOptions: {
-			scss: {
-				api: 'modern'
-			}
-		},
 		postcss: {
 			plugins: IN_PRODUCTION
 				? [

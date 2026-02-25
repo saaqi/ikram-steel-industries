@@ -1,5 +1,6 @@
 <script>
 	import isiLogo from '$assets/isi_logo.svg';
+	import { resolve } from '$app/paths';
 	import { navItems } from './navItems.js';
 	// import { onMount } from 'svelte';
 	import { menuExpanded } from './sharedState.js';
@@ -23,14 +24,20 @@
 	const close = () => menuExpanded.set(false);
 </script>
 
-<header class="site-header bg-light">
+<header class="site-header bg-info-subtle">
 	<div class="container flex">
-		<a href="/products" class="shop-link" title="Shop Link" aria-label="Shop Link" onclick={close}>
+		<a
+			href={resolve('/products')}
+			class="shop-link"
+			title="Shop Link"
+			aria-label="Shop Link"
+			onclick={close}
+		>
 			<i class="bx bx-store"></i>
 		</a>
 		<!-- SITE LOGO -->
 		<div class="title-area site-title py-1">
-			<a href="/" title="Ïkram Steel Industries Home Section" onclick={close}>
+			<a href={resolve('/')} title="Ïkram Steel Industries Home Section" onclick={close}>
 				<img
 					src={isiLogo}
 					alt="Ikram Steel Industries & Re-Rolling Mills"
@@ -60,7 +67,7 @@
 			<ul id="primary-menu" class="primary-menu list-unstyled mb-lg-0">
 				{#each navItems as { href, text, icon, active }, index ('nav-item-' + index)}
 					<li class="menu-item">
-						<a {href} onclick={close} class={active ? 'active' : ''}>
+						<a href={resolve(href)} onclick={close} class={active ? 'active' : ''}>
 							<i class="bx {icon}"></i>
 							{text}
 						</a>

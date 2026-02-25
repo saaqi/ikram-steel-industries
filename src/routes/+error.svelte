@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/state';
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 
 	const emojis = {
 		400: '❌', // Bad Request
@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>ERROR {page.status} - {page.error.message}</title>
+	<title>ERROR {page.status} - {page.error?.message || 'Unknown Error'}</title>
 	<meta name="robots" content="noindex, follow" />
 </svelte:head>
 
@@ -25,7 +25,7 @@
 		<div id="notfound" class="row text-center py-3 justify-content-center gap-4">
 			<div class="notfound-404 col-12">
 				<h1 class="display-4 fw-bold">OOPS! <span>{emojis[page.status] ?? emojis[500]}</span></h1>
-				<h2 class="my-4">ERROR {page.status}: {page.error.message}</h2>
+				<h2 class="my-4">ERROR {page.status}: {page.error?.message || 'Unknown Error'}</h2>
 			</div>
 			<p class="col-12">
 				Uh-oh! It seems the page you're looking for has either been removed, relocated, or may not
@@ -33,9 +33,11 @@
 				well, consider navigating back to our homepage to explore anew. Thanks for your
 				understanding!
 			</p>
-			<a class="btn btn-secondary btn-lg col-md-6" href={base + '/'}>
-				<i class="bx bx-home"></i> Go To Homepage
-			</a>
+			<div class="col">
+				<a class="btn btn-secondary" href={resolve('/')}>
+					<i class="bx bx-home"></i> Go To Homepage
+				</a>
+			</div>
 		</div>
 	</div>
 </div>

@@ -52,7 +52,7 @@
 							{href}
 							{title}
 							target="_blank"
-							rel="noopener noreferrer nofollow"
+							rel="noopener noreferrer nofollow external"
 							aria-labelledby={title.replace(/\s+/g, '-').toLowerCase()}
 						>
 							<i class="bx {icon}"></i>
@@ -69,6 +69,7 @@
 						class="btn btn-light btn-lg fw-medium"
 						href="https://goo.gl/maps/VXY4dq9Ta4on3sor7"
 						target="_blank"
+						rel="noopener noreferrer nofollow external"
 					>
 						<i class="bx bx-map"></i> Visit Us!
 					</a>

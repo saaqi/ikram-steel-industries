@@ -1,5 +1,6 @@
 <script>
 	import isiLogo from '$assets/isi_logo.svg';
+	import { resolve } from '$app/paths';
 	import { navItems } from './navItems.js';
 </script>
 
@@ -20,7 +21,7 @@
 				<ul class="list-unstyled row g-3">
 					{#each navItems as { href, text, icon }, index ('sitemap-item-' + index)}
 						<li class="menu-item">
-							<a class="fw-medium" {href}>
+							<a class="fw-medium" href={resolve(href)}>
 								<i class="bx {icon}"></i>
 								{text}
 							</a>
@@ -74,6 +75,7 @@
 				<a
 					class="link-primary"
 					href="https://saqibtech.com"
+					rel="external"
 					target="_blank"
 					title="Saqib Islam - UI/UX Designer & Fullstack Developer."
 					>Saaqi

@@ -22,9 +22,8 @@
 					techniques to produce steel products that are not only strong and durable but also cost-effective.
 				</li>
 				<li>
-					<strong>Sustainability:</strong> Committed to sustainable practices, we strive to minimize
-					our environmental impact through efficient production methods and responsible sourcing of raw
-					materials.
+					<strong>Sustainability:</strong> Committed to sustainable practices, we strive to minimize our
+					environmental impact through efficient production methods and responsible sourcing of raw materials.
 				</li>
 				<li>
 					<strong>Customer Satisfaction:</strong> Our customer-centric approach ensures that we understand

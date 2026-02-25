@@ -50,10 +50,10 @@
 	<div class="container">
 		<h3 class="section-heading h4"><i class="bx bx-user-circle"></i> Our Team Members</h3>
 		<div class="row g-3">
-			{#each teamMembers as { name, position, image, alt, contact }, index (('team-member-', index))}
+			{#each teamMembers as { name, position, image, alt, contact } (name)}
 				<div class="team-widget col-6 col-lg-3">
 					<div class="card card-warning bg-primary-subtle text-dark h-100">
-						{#each Object.entries(profilePics) as [_path, module], index ('pic-' + index)}
+						{#each Object.entries(profilePics) as [_path, module] (_path)}
 							{#if _path.includes(image)}
 								<enhanced:img
 									sizes="(min-width: 300px) 300px, 100vw"
@@ -69,9 +69,11 @@
 							<div>{position}</div>
 							{#if contact}
 								<ul class="team-contact list-unstyled mt-3">
-									{#each contact as { icon, link, label }, index (('contact-', index))}
+									{#each contact as { icon, link, label } (link)}
 										<li class="mb-3">
-											<a href={link}><i class="bx {icon}"></i> {label}</a>
+											<a href={link} rel="nofollow noopener external"
+												><i class="bx {icon}"></i> {label}</a
+											>
 										</li>
 									{/each}
 								</ul>
