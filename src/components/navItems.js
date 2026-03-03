@@ -4,7 +4,6 @@ export const navItems = [
 		href: '/',
 		text: 'Home',
 		icon: 'bx-home',
-		active: true
 	},
 	{
 		tag: '#our-products',

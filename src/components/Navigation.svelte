@@ -1,11 +1,11 @@
 <script>
-	import isiLogo from '$assets/isi_logo.svg';
+	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import { navItems } from './navItems.js';
-	// import { onMount } from 'svelte';
+	import isiLogo from '$assets/isi_logo.svg';
+	import { onNavigate } from '$app/navigation';
 	import { menuExpanded } from './sharedState.js';
 
-	import { onNavigate } from '$app/navigation';
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
 		// Prevent animation if navigating to the same URL
@@ -65,9 +65,10 @@
 			itemtype="https://schema.org/SiteNavigationElement"
 		>
 			<ul id="primary-menu" class="primary-menu list-unstyled mb-lg-0">
-				{#each navItems as { href, text, icon, active }, index ('nav-item-' + index)}
+				<!-- { .active : "keeps from purging"} -->
+				{#each navItems as { href, text, icon }, index ('nav-item-' + index)}
 					<li class="menu-item">
-						<a href={resolve(href)} onclick={close} class={active ? 'active' : ''}>
+						<a href={resolve(href)} onclick={close} class:active={page.route.id == href}>
 							<i class="bx {icon}"></i>
 							{text}
 						</a>
@@ -117,7 +118,7 @@
 			letter-spacing: 0.5px;
 			text-transform: capitalize;
 			text-decoration: none;
-			&:hover {
+			&:hover, &.active {
 				color: var(--bs-info);
 				text-shadow: 1px 1px 2px rgba(#333, 0.5);
 			}
