@@ -1,11 +1,10 @@
-// const IN_PRODUCTION = process.env.NODE_ENV === 'production';
+import path from 'path';
+import cssnano from 'cssnano';
 import { defineConfig } from 'vite';
+import autoprefixer from 'autoprefixer';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import purgeCSSPlugin from '@fullhuman/postcss-purgecss';
-import cssnano from 'cssnano';
-import autoprefixer from 'autoprefixer';
-import path from 'path';
 const IN_PRODUCTION = process.env.NODE_ENV === 'production';
 // const bootstrap = 'node_modules/bootstrap';
 
