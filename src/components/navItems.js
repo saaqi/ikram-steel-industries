@@ -3,7 +3,7 @@ export const navItems = [
 		tag: '#home',
 		href: '/',
 		text: 'Home',
-		icon: 'bx-home',
+		icon: 'bx-home'
 	},
 	{
 		tag: '#our-products',

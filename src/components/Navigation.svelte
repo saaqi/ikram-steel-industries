@@ -118,7 +118,8 @@
 			letter-spacing: 0.5px;
 			text-transform: capitalize;
 			text-decoration: none;
-			&:hover, &.active {
+			&:hover,
+			&.active {
 				color: var(--bs-info);
 				text-shadow: 1px 1px 2px rgba(#333, 0.5);
 			}

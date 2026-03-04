@@ -2,6 +2,7 @@
 	// !Important: Do not remove.
 	const { children } = $props();
 	import '@fontsource-variable/inter';
+	import '@fontsource-variable/raleway';
 	import '$styles/style.scss';
 	import 'boxicons/css/boxicons.min.css';
 

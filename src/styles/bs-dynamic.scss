@@ -1,13 +1,4 @@
-// OVERRIDE DEFAULT VARIABLES
-$primary: #45474b;
-$secondary: #f4ce14;
-$info: #235c47;
-$warning: #f5f7f8;
-// $success:
-// $danger: #E87883;
-// $light:
-// $dark:
-$font-family-sans-serif: 'Inter Variable', 'sans-serif';
+@import './variables.scss';
 
-// IMPORT BOOTSTRAP
-@import '../../node_modules/bootstrap/scss/bootstrap';
+// import bootstrap scss
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';

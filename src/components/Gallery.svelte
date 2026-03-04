@@ -1,4 +1,5 @@
 <script>
+	import { asset } from '$app/paths';
 	// Import all .webp images from the gallery folder eagerly
 	// Files ending with Thumb.webp – use query params
 	const thumbs = import.meta.glob('/src/assets/gallery/*Thumb.webp', {
@@ -66,12 +67,7 @@
 		<h3 class="section-heading h4"><i class="bx bx-images"></i> Gallery</h3>
 		<div id="homegallery" class="homegallery row g-3">
 			{#each galleryArray as { image, thumb, title } (image)}
-				<a
-					class="col-6 col-lg-3"
-					href={image}
-					data-fslightbox="gallery"
-					aria-label={title}
-				>
+				<a class="col-6 col-lg-3" href={asset(image)} data-fslightbox="gallery" aria-label={title}>
 					<enhanced:img
 						sizes="(min-width: 450px) 450px, 100vw"
 						class="img-fluid rounded shadow-sm border border-primary-subtle"
