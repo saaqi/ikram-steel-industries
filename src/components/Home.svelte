@@ -34,7 +34,7 @@
 		<div class="row">
 			<div class="col-lg-6 text-light text-center text-lg-start d-flex flex-column gap-3">
 				<h1>Ikram Steel Industries & Re-Rolling Mills</h1>
-				<h2 class="h5">
+				<h2 class="fs-5 fw-normal">
 					are the leading manufacturers of steel rebars, renowned for their high-quality steel and
 					commitment to excellence. Specializing in the production of Grade 60 and Grade 40 steel
 					rebars, as well as Steel CC Billets.

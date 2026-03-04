@@ -45,7 +45,6 @@
 	},
 	"dependencies": {
 		"@fontsource-variable/inter": "^5.2.8",
-		"@fontsource-variable/raleway": "^5.2.8",
 		"@sveltejs/enhanced-img": "^0.10.3",
 		"bootstrap": "^5.3.8",
 		"boxicons": "^2.1.4",

@@ -11,5 +11,5 @@ $warning: #f5f7f8;
 // $font-size-base: 0.9375rem;
 $font-family-base: 'Inter Variable', sans-serif;
 $font-family-sans-serif: $font-family-base;
-$headings-font-family: 'Raleway Variable', sans-serif;
+$headings-font-family: $font-family-base;
 $btn-font-family: $headings-font-family;
