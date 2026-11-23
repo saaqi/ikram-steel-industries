@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { resolve } from '$app/paths'
   import { navItems } from './navItems.js'
   import isiLogo from '#assets/isi_logo.svg'
@@ -15,7 +15,7 @@
         <ul class="list-unstyled row g-3">
           {#each navItems as { href, text, icon }, index ('sitemap-item-' + index)}
             <li class="menu-item">
-              <a class="fw-medium" href={resolve(href)}>
+              <a class="fw-medium" href={resolve(href as '/')}>
                 <i class="bx {icon}"></i>
                 {text}
               </a>

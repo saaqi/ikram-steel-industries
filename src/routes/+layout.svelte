@@ -5,10 +5,7 @@
   import '@fontsource-variable/inter'
   import 'boxicons/css/boxicons.min.css'
 
-  import LoadingAnimation from '#components/LoadingAnimation.svelte'
-  import Navigation from '#components/Navigation.svelte'
-  import Footer from '#components/Footer.svelte'
-  import GoTop from '#components/GoTop.svelte'
+  import { LoadingAnimation, Navigation, Footer, GoTop } from '#components'
 
   // Canonical URL for SEO
   import { page } from '$app/state'

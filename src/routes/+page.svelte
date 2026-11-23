@@ -1,11 +1,5 @@
 <script>
-  import Home from '#components/Home.svelte'
-  import Products from '#components/Products.svelte'
-  import WhyUs from '#components/WhyUs.svelte'
-  import OurTeam from '#components/OurTeam.svelte'
-  import Testimonials from '#components/Testimonials.svelte'
-  import Gallery from '#components/Gallery.svelte'
-  import ContactUs from '#components/ContactUs.svelte'
+  import { Home, WhyUs, OurTeam, Gallery, Products, ContactUs, Testimonials } from '#components'
 </script>
 
 <svelte:head>

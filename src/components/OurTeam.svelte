@@ -68,12 +68,12 @@
       {#each teamMembers as { name, position, image, alt, contact } (name)}
         <div class="team-widget col-6 col-lg-3">
           <div class="card card-warning bg-primary-subtle text-dark h-100">
-            {#each Object.entries(profilePics) as [_path, module] (_path)}
+            {#each Object.entries(profilePics) as [_path, module] ((module as { default: string }).default)}
               {#if _path.includes(image)}
                 <enhanced:img
+                  src={(module as { default: string }).default}
                   sizes="(min-width: 300px) 300px, 100vw"
                   class="img-fluid w-100 card-img-top"
-                  src={module.default}
                   loading="lazy"
                   {alt}
                 />

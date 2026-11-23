@@ -1,6 +1,5 @@
 <script>
-  import BillBoard from '#components/BillBoard.svelte'
-  import ContactUs from '#components/ContactUs.svelte'
+  import { BillBoard, ContactUs } from '#components'
 </script>
 
 <svelte:head>

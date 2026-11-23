@@ -1,5 +1,12 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte'
+  import { resolve } from '$app/paths'
+
+  // fslightbox attaches itself to the page, so it must run in the browser after render
+  onMount(async () => {
+    await import('fslightbox')
+    window.refreshFsLightbox()
+  })
 
   // Thumbnails: processed by enhanced-img (returns an object with sources + img)
   const thumbs = import.meta.glob('/src/assets/gallery/*Thumb.webp', {
@@ -54,12 +61,6 @@
       incomplete.map(([name]) => name)
     )
   }
-
-  // fslightbox attaches itself to the page, so it must run in the browser after render
-  onMount(async () => {
-    await import('fslightbox')
-    window.refreshFsLightbox()
-  })
 </script>
 
 <section id="gallery" class="gallery-section">
@@ -70,7 +71,7 @@
     </h3>
     <div id="homegallery" class="homegallery row g-3">
       {#each galleryArray as { id, image, thumb, title } (id)}
-        <a class="col-6 col-lg-3" href={image} data-fslightbox="gallery" aria-label={title}>
+        <a class="col-6 col-lg-3" href={resolve(image)} data-fslightbox="gallery" aria-label={title}>
           <enhanced:img
             sizes="(min-width: 450px) 450px, 100vw"
             class="img-fluid rounded shadow-sm border border-primary-subtle"

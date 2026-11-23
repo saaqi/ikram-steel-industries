@@ -63,7 +63,7 @@
         <!-- { .active : "keeps from purging"} -->
         {#each navItems as { href, text, icon }, index ('nav-item-' + index)}
           <li class="menu-item">
-            <a href={resolve(href)} onclick={close} class:active={page.route.id == href}>
+            <a href={resolve(href as '/')} onclick={close} class:active={page.route.id == href}>
               <i class="bx {icon}"></i>
               {text}
             </a>

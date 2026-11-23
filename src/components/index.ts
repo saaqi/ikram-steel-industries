@@ -1,1 +1,12 @@
-// place files you want to import through the `#lib` alias in this folder.
+export { default as BillBoard } from './BillBoard.svelte'
+export { default as ContactUs } from './ContactUs.svelte'
+export { default as Footer } from './Footer.svelte'
+export { default as Gallery } from './Gallery.svelte'
+export { default as GoTop } from './GoTop.svelte'
+export { default as Home } from './Home.svelte'
+export { default as LoadingAnimation } from './LoadingAnimation.svelte'
+export { default as Navigation } from './Navigation.svelte'
+export { default as OurTeam } from './OurTeam.svelte'
+export { default as Products } from './Products.svelte'
+export { default as Testimonials } from './Testimonials.svelte'
+export { default as WhyUs } from './WhyUs.svelte'
