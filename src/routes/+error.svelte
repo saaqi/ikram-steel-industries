@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   import { page } from '$app/state'
   import { resolve } from '$app/paths'
 
-  const emojis = {
+  const emojis: Record<number, string> = {
     400: '❌', // Bad Request
     401: '🔒', // Unauthorized
     403: '⛔', // Forbidden
@@ -35,17 +35,8 @@
         homepage to explore anew. Thanks for your understanding!
       </p>
       <div class="col">
-        <a class="btn btn-secondary" href={resolve('/')}>
-          <i class="bx bx-home"></i>
-          Go To Homepage
-        </a>
+        <a class="btn btn-secondary" href={resolve('/')}>&#127968 Go To Homepage</a>
       </div>
     </div>
   </div>
 </div>
-
-<style>
-  .container {
-    max-width: 600px;
-  }
-</style>

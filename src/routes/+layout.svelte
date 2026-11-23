@@ -12,12 +12,14 @@
 
   // Canonical URL for SEO
   import { page } from '$app/state'
-  import { data } from '/src/app.js'
-  const baseUrl = data.baseURL
+  import { appData } from '#lib/appData.ts'
 </script>
 
 <svelte:head>
-  <link rel="canonical" href={page.url.href.startsWith(baseUrl) ? page.url.href : baseUrl + page.url.pathname} />
+  <link
+    rel="canonical"
+    href={page.url.href.startsWith(appData.baseURL) ? page.url.href : appData.baseURL + page.url.pathname}
+  />
 </svelte:head>
 
 <LoadingAnimation />

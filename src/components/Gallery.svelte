@@ -1,64 +1,64 @@
 <script>
-  import { resolve } from '$app/paths'
-  // Import all .webp images from the gallery folder eagerly
-  // Files ending with Thumb.webp – use query params
-  const thumbs = import.meta.glob('#assets/gallery/*Thumb.webp', {
-    eager: true,
-    query: {
-      enhanced: true,
-      w: '450',
-      format: 'avif;webp'
-    },
-    import: 'default'
-  })
-
-  // All other .webp files – no query
-  const others = import.meta.glob('#assets/gallery/!(*Thumb).webp', {
-    eager: true,
-    import: 'default'
-  })
-
-  // Combine both into a single object (if needed)
-  const gallery = { ...thumbs, ...others }
-
-  // Convert the imported object into [filename, path] pairs
-  const entries = Object.entries(gallery)
-
-  // A map to pair images with their thumbnails
-  const groupedImages = {}
-
-  for (const [path, fullPath] of entries) {
-    const filename = path.split('/').pop() // e.g. "gallery01Thumb.webp"
-    const isThumb = /Thumb/i.test(filename)
-    const baseName = filename.replace(/Thumb/i, '').replace(/\.(webp|jpg|png)$/, '')
-
-    if (!groupedImages[baseName]) groupedImages[baseName] = {}
-
-    // isThumb? (groupedImages[baseName].thumb = fullPath) : (groupedImages[baseName].image = fullPath);
-    groupedImages[baseName][isThumb ? 'thumb' : 'image'] = fullPath
-  }
-
-  // Convert the grouped image objects into a structured array
-  const galleryArray = Object.values(groupedImages).map((entry, index) => ({
-    image: entry.image,
-    thumb: entry.thumb,
-    title: `Gallery Image ${index + 1}`
-  }))
-
   import { onMount } from 'svelte'
 
-  let fsLoaded = false
-
-  onMount(async () => {
-    await import('fslightbox')
-    fsLoaded = true
-    refreshFsLightbox()
+  // Thumbnails: processed by enhanced-img (returns an object with sources + img)
+  const thumbs = import.meta.glob('/src/assets/gallery/*Thumb.webp', {
+    eager: true,
+    query: { enhanced: true, w: '450', format: 'avif;webp' },
+    import: 'default'
   })
 
-  $effect(() => {
-    if (fsLoaded) {
-      refreshFsLightbox()
-    }
+  // Full-size images: plain URLs. The second pattern excludes the thumbnails.
+  const fulls = import.meta.glob(['/src/assets/gallery/*.webp', '!/src/assets/gallery/*Thumb.webp'], {
+    eager: true,
+    query: '?url',
+    import: 'default'
+  })
+
+  /** Strip folder, "Thumb" suffix and extension: ".../gallery01Thumb.webp" -> "gallery01" */
+  const baseName = (path) =>
+    path
+      .split('/')
+      .pop()
+      .replace(/Thumb(?=\.\w+$)/, '')
+      .replace(/\.\w+$/, '')
+
+  // Pair each thumbnail with its full-size image by base name
+  const pairs = {}
+
+  for (const [path, mod] of Object.entries(thumbs)) {
+    const name = baseName(path)
+    pairs[name] = { ...pairs[name], thumb: mod }
+  }
+  for (const [path, url] of Object.entries(fulls)) {
+    const name = baseName(path)
+    pairs[name] = { ...pairs[name], image: url }
+  }
+
+  // Keep only complete pairs, in a stable order
+  const galleryArray = Object.entries(pairs)
+    .filter(([, v]) => v.image && v.thumb)
+    .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+    .map(([name, v], index) => ({
+      id: name,
+      image: v.image,
+      thumb: v.thumb,
+      title: `Gallery Image ${index + 1}`
+    }))
+
+  // Warn (in the terminal during build) about files without a partner
+  const incomplete = Object.entries(pairs).filter(([, v]) => !v.image || !v.thumb)
+  if (incomplete.length) {
+    console.warn(
+      'Gallery: incomplete pairs skipped:',
+      incomplete.map(([name]) => name)
+    )
+  }
+
+  // fslightbox attaches itself to the page, so it must run in the browser after render
+  onMount(async () => {
+    await import('fslightbox')
+    window.refreshFsLightbox()
   })
 </script>
 
@@ -69,8 +69,8 @@
       Gallery
     </h3>
     <div id="homegallery" class="homegallery row g-3">
-      {#each galleryArray as { image, thumb, title } (image)}
-        <a class="col-6 col-lg-3" href={resolve(image)} data-fslightbox="gallery" aria-label={title}>
+      {#each galleryArray as { id, image, thumb, title } (id)}
+        <a class="col-6 col-lg-3" href={image} data-fslightbox="gallery" aria-label={title}>
           <enhanced:img
             sizes="(min-width: 450px) 450px, 100vw"
             class="img-fluid rounded shadow-sm border border-primary-subtle"

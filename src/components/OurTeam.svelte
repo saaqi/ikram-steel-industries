@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   const profilePics = import.meta.glob('#assets/team/*.webp', {
     eager: true,
     query: {

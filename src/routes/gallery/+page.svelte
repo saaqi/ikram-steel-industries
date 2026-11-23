@@ -1,6 +1,7 @@
 <script>
   import BillBoard from '#components/BillBoard.svelte'
   import Gallery from '#components/Gallery.svelte'
+  // @ts-expect-error: This Module Exists typescript doesn't recognize enhanced imports
   import billboard from '#assets/gallery/rebars40.webp?enhanced&w=1600;800;400&format=avif;webp'
 </script>
 

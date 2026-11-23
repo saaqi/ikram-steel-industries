@@ -1,6 +1,6 @@
 // Store Universal Data for app usage.
 
-export const data = {
+export const appData = {
   baseURL: 'https://ikramsteel.com',
   primaryColor: '#45474b',
   secondaryColor: '#f4ce14'

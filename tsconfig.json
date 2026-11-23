@@ -1,0 +1,10 @@
+{
+  "extends": "$app/tsconfig",
+  "compilerOptions": {
+    // "rewriteRelativeImportExtensions": true,
+    "sourceMap": true,
+    "strict": true,
+    "types": ["$app/types", "node", "./src/worker-configuration.d.ts"]
+  },
+  "include": ["src", "vite.config.ts"]
+}

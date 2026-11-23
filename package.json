@@ -9,7 +9,9 @@
   },
   "packageManager": "pnpm@12.21.0+sha512.66fd8278ee28935ce951792d34367ff3af5c432a2756445823029533835b8da529bbe0be5130afd56ed0713fb8789e47bad82d93bd5ae2fe54b15562d6276ef0",
   "scripts": {
-    "build": "rimraf .svelte-kit/cloudflare && vite build --emptyOutDir",
+    "postinstall": "git switch dev || git switch -c dev",
+    "pull": "git switch main && git pull origin main && git switch dev && git pull origin dev",
+    "build": "rimraf .svelte-kit/output && vite build",
     "build-bootstrap": "sass --no-source-map ./src/styles/bs-dynamic.scss ./src/styles/bootstrap.css",
     "check": "svelte-kit sync && svelte-check && pnpm run lint",
     "check:watch": "svelte-kit sync && svelte-check --watch",
@@ -17,9 +19,10 @@
     "upload": "git checkout main && git pull && git merge dev && git push && git checkout dev",
     "format": "prettier --write .",
     "lint": "prettier --check . && eslint .",
-    "preview": "pnpm run build && wrangler pages dev",
+    "preview": "pnpm run build && wrangler dev",
     "prepare": "svelte-kit sync || echo ''",
-    "deploy": "pnpm run build && wrangler pages deploy"
+    "deploy": "pnpm run build && wrangler deploy",
+    "cf-typegen": "wrangler types ./src/worker-configuration.d.ts"
   },
   "devDependencies": {
     "@eslint/compat": "^2.1.1",
@@ -29,12 +32,14 @@
     "@sveltejs/kit": "^3.4.0",
     "@sveltejs/load-config": "^0.2.3",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@types/node": "^26.6.6",
     "autoprefixer": "^10.7.0",
     "cssnano": "^9.9.0",
     "eslint": "^10.15.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-svelte": "^3.24.1",
     "globals": "^17.14.0",
+    "html-minifier-terser": "^7.2.0",
     "postcss": "^8.5.33",
     "prettier": "^3.10.1",
     "prettier-plugin-svelte": "^4.2.0",

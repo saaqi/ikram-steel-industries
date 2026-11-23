@@ -1,9 +1,14 @@
-import * as sitemap from 'super-sitemap'
+// /src/routes/sitemap.xml/+server.ts
+import * as sitemap from 'super-sitemap/sveltekit'
+import type { RequestHandler } from '@sveltejs/kit'
+import { error } from '@sveltejs/kit'
+import { appData } from '#lib/appData.ts'
+
 export const prerender = true
 
-export const GET = async () => {
+export const GET: RequestHandler = async () => {
   return await sitemap.response({
-    origin: 'https://ikramsteel.com',
+    origin: appData.baseURL,
     defaultChangefreq: 'monthly',
     defaultPriority: 0.8,
     processPaths: (paths) => {
