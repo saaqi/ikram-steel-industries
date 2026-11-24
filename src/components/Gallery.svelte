@@ -1,5 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import type { Picture } from '@sveltejs/enhanced-img'
+
+  type GalleryPair = { thumb?: Picture; image?: string }
+  // type CompletePair = Required<GalleryPair>
 
   // fslightbox attaches itself to the page, so it must run in the browser after render
   onMount(async () => {
@@ -8,29 +12,24 @@
   })
 
   // Thumbnails: processed by enhanced-img (returns an object with sources + img)
-  const thumbs = import.meta.glob('/src/assets/gallery/*Thumb.webp', {
+  const thumbs = import.meta.glob<Picture>('/src/assets/gallery/*Thumb.webp', {
     eager: true,
     query: { enhanced: true, w: '450', format: 'avif;webp' },
     import: 'default'
   })
 
   // Full-size images: plain URLs. The second pattern excludes the thumbnails.
-  const fulls = import.meta.glob(['/src/assets/gallery/*.webp', '!/src/assets/gallery/*Thumb.webp'], {
+  const fulls = import.meta.glob<string>(['/src/assets/gallery/*.webp', '!/src/assets/gallery/*Thumb.webp'], {
     eager: true,
     query: '?url',
     import: 'default'
   })
 
   /** Strip folder, "Thumb" suffix and extension: ".../gallery01Thumb.webp" -> "gallery01" */
-  const baseName = (path) =>
-    path
-      .split('/')
-      .pop()
-      .replace(/Thumb(?=\.\w+$)/, '')
-      .replace(/\.\w+$/, '')
-
+  const baseName = (path: string): string =>
+    (path.split('/').pop() ?? path).replace(/Thumb(?=\.\w+$)/, '').replace(/\.\w+$/, '')
   // Pair each thumbnail with its full-size image by base name
-  const pairs = {}
+  const pairs: Record<string, GalleryPair> = {}
 
   for (const [path, mod] of Object.entries(thumbs)) {
     const name = baseName(path)
@@ -40,6 +39,8 @@
     const name = baseName(path)
     pairs[name] = { ...pairs[name], image: url }
   }
+  // Type guard: narrows optional fields to required ones
+  // const isComplete = (pair: GalleryPair): pair is CompletePair => Boolean(pair.image && pair.thumb)
 
   // Keep only complete pairs, in a stable order
   const galleryArray = Object.entries(pairs)
@@ -75,7 +76,7 @@
           <enhanced:img
             sizes="(min-width: 450px) 450px, 100vw"
             class="img-fluid rounded shadow-sm border border-primary-subtle"
-            src={thumb}
+            src={thumb as Picture}
             draggable="false"
             loading="lazy"
             alt={title}

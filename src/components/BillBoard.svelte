@@ -4,7 +4,7 @@
   interface Props {
     billBoardPic?: Picture
   }
-  const { billBoardPic = pic as Picture }: Props = $props()
+  const { billBoardPic = pic }: Props = $props()
 </script>
 
 <section class="billboard py-0 mt-0" id="billboard">
