@@ -1,6 +1,5 @@
 <script>
   import { onMount } from 'svelte'
-  import { resolve } from '$app/paths'
 
   // fslightbox attaches itself to the page, so it must run in the browser after render
   onMount(async () => {
@@ -23,6 +22,7 @@
   })
 
   /** Strip folder, "Thumb" suffix and extension: ".../gallery01Thumb.webp" -> "gallery01" */
+  // @ts-expect-error: This Module Exists typescript doesn't recognize enhanced imports
   const baseName = (path) =>
     path
       .split('/')
@@ -35,10 +35,12 @@
 
   for (const [path, mod] of Object.entries(thumbs)) {
     const name = baseName(path)
+    // @ts-expect-error: This Module Exists typescript doesn't recognize enhanced imports
     pairs[name] = { ...pairs[name], thumb: mod }
   }
   for (const [path, url] of Object.entries(fulls)) {
     const name = baseName(path)
+    // @ts-expect-error: This Module Exists typescript doesn't recognize enhanced imports
     pairs[name] = { ...pairs[name], image: url }
   }
 
@@ -71,7 +73,8 @@
     </h3>
     <div id="homegallery" class="homegallery row g-3">
       {#each galleryArray as { id, image, thumb, title } (id)}
-        <a class="col-6 col-lg-3" href={resolve(image)} data-fslightbox="gallery" aria-label={title}>
+        <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+        <a class="col-6 col-lg-3" href={image} data-fslightbox="gallery" aria-label={title}>
           <enhanced:img
             sizes="(min-width: 450px) 450px, 100vw"
             class="img-fluid rounded shadow-sm border border-primary-subtle"

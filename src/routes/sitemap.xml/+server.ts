@@ -1,7 +1,6 @@
 // /src/routes/sitemap.xml/+server.ts
 import * as sitemap from 'super-sitemap/sveltekit'
 import type { RequestHandler } from '@sveltejs/kit'
-import { error } from '@sveltejs/kit'
 import { appData } from '#lib/appData.ts'
 
 export const prerender = true

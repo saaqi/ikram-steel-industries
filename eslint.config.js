@@ -1,24 +1,27 @@
-import js from '@eslint/js'
+import prettier from 'eslint-config-prettier'
 import path from 'node:path'
-import globals from 'globals'
+import js from '@eslint/js'
 import svelte from 'eslint-plugin-svelte'
 import { defineConfig, includeIgnoreFile } from 'eslint/config'
-import prettier from 'eslint-config-prettier'
-import { loadConfig } from '@sveltejs/load-config'
-const svelteConfig = (await loadConfig('./', { traverse: false }))?.config
+import globals from 'globals'
+import ts from 'typescript-eslint'
+
 const gitignorePath = path.resolve(import.meta.dirname, '.gitignore')
 
 export default defineConfig(
   // Ignore Files ...
   { ignores: ['src/worker-configuration.d.ts'] },
-
   includeIgnoreFile(gitignorePath),
   js.configs.recommended,
-  ...svelte.configs.recommended,
+  ts.configs.recommendedTypeChecked,
+  svelte.configs.recommended,
   prettier,
-  ...svelte.configs.prettier,
+  svelte.configs.prettier,
   {
-    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+    languageOptions: {
+      parserOptions: { projectService: true },
+      globals: { ...globals.browser, ...globals.node }
+    },
     rules: {
       // typescript-eslint strongly recommend that you do not use the no-undef lint rule on TypeScript projects.
       // see: https://typescript-eslint.io/troubleshooting/faqs/eslint/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
@@ -31,8 +34,13 @@ export default defineConfig(
       parserOptions: {
         projectService: true,
         extraFileExtensions: ['.svelte'],
-        svelteConfig
+        parser: ts.parser
       }
     }
+  },
+  {
+    // Override or add rule settings here, such as:
+    // 'svelte/button-has-type': 'error'
+    rules: {}
   }
 )

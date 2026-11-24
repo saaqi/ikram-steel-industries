@@ -1,6 +1,10 @@
-<script>
+<script lang="ts">
   // !Important: Do not remove.
-  const { children } = $props()
+  import type { Snippet } from 'svelte'
+  interface Props {
+    children: Snippet
+  }
+  const { children }: Props = $props()
   import '#styles/style.scss'
   import '@fontsource-variable/inter'
   import 'boxicons/css/boxicons.min.css'

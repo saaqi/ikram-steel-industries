@@ -55,4 +55,4 @@ declare global {
   }
 }
 
-export { }
+export {}

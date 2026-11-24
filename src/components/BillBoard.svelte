@@ -1,7 +1,11 @@
-<script>
+<script lang="ts">
+  import type { Picture } from '@sveltejs/enhanced-img'
   // @ts-expect-error: This Module Exists typescript doesn't recognize enhanced imports
   import pic from '#assets/gallery/gallery04.webp?enhanced&w=1600;800;400&format=avif;webp'
-  const { billBoardPic = pic } = $props()
+  interface Props {
+    billBoardPic?: Picture
+  }
+  const { billBoardPic = pic as Picture }: Props = $props()
 </script>
 
 <section class="billboard py-0 mt-0" id="billboard">

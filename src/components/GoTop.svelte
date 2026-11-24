@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   // import '$styles/toplink.scss';
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
@@ -7,7 +7,7 @@
   let show = $state(false)
   onMount(() => {
     window.addEventListener('scroll', () => {
-      window.scrollY >= 150 ? (show = true) : (show = false)
+      show = window.scrollY >= 150
     })
   })
 </script>
