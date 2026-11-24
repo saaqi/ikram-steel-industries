@@ -1,9 +1,6 @@
 <script lang="ts">
-  // @ts-expect-error: This Module Exists typescript doesn't recognize enhanced imports
-  import rebars60Thumb from '#assets/gallery/rebars60Thumb.webp?enhanced&w=450&format=avif;webp'
-  // @ts-expect-error: This Module Exists typescript doesn't recognize enhanced imports
+  import rebars60Thumb from '#assets/gallery/rebars60Thumb.webp?w=450&format=avif;webp&enhanced'
   import rebars40Thumb from '#assets/gallery/rebars40Thumb.webp?enhanced&w=450&format=avif;webp'
-  // @ts-expect-error: This Module Exists typescript doesn't recognize enhanced imports
   import steelBilletsThumb from '#assets/gallery/steelBilletsThumb.webp?enhanced&w=450&format=avif;webp'
 
   const products = [

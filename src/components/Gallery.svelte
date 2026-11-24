@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte'
 
   // fslightbox attaches itself to the page, so it must run in the browser after render
@@ -22,7 +22,6 @@
   })
 
   /** Strip folder, "Thumb" suffix and extension: ".../gallery01Thumb.webp" -> "gallery01" */
-  // @ts-expect-error: This Module Exists typescript doesn't recognize enhanced imports
   const baseName = (path) =>
     path
       .split('/')
@@ -35,12 +34,10 @@
 
   for (const [path, mod] of Object.entries(thumbs)) {
     const name = baseName(path)
-    // @ts-expect-error: This Module Exists typescript doesn't recognize enhanced imports
     pairs[name] = { ...pairs[name], thumb: mod }
   }
   for (const [path, url] of Object.entries(fulls)) {
     const name = baseName(path)
-    // @ts-expect-error: This Module Exists typescript doesn't recognize enhanced imports
     pairs[name] = { ...pairs[name], image: url }
   }
 

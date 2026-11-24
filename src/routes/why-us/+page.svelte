@@ -1,6 +1,5 @@
 <script>
   import { BillBoard, WhyUs } from '#components'
-  // @ts-expect-error: This Module Exists typescript doesn't recognize enhanced imports
   import billboard from '#assets/gallery/gallery02.webp?enhanced&w=1600;800;400&format=avif;webp'
 </script>
 
