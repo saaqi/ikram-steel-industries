@@ -44,7 +44,8 @@
     </div>
     <!-- Main Navigation -->
     <button
-      class="menu-toggle link-primary {$menuExpanded ? 'activated' : ''}"
+      class="menu-toggle link-primary py-2"
+      class:activated={$menuExpanded}
       aria-label="Navigation Menu Button"
       aria-expanded={$menuExpanded ? 'true' : 'false'}
       aria-pressed={$menuExpanded ? 'true' : 'false'}
