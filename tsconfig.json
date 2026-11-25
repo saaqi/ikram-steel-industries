@@ -2,7 +2,7 @@
   "extends": "$app/tsconfig",
   "compilerOptions": {
     "strict": true,
-    "types": ["$app/types", "node", "./src/worker-configuration.d.ts"]
+    "types": ["$app/types", "node", "./src/worker-configuration.d.ts", "./src/fslightbox.d.ts", "./src/enhanced.d.ts"]
   },
   "include": ["src", "vite.config.ts", "prettier.config.js", "eslint.config.js"]
 }

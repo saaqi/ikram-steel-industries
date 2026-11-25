@@ -88,6 +88,7 @@ if (!fs.existsSync('static')) fs.mkdirSync('static')
 if (!fs.existsSync('build')) fs.mkdirSync('build')
 
 fs.writeFileSync('static/sitemap.xml', sitemap)
-fs.writeFileSync('.cloudflare/public/sitemap.xml', sitemap)
+fs.writeFileSync('.svelte-kit/cloudflare/client/sitemap.xml', sitemap)
+fs.writeFileSync('.svelte-kit/output/client/sitemap.xml', sitemap)
 
 console.log('✅ Sitemap generated.')

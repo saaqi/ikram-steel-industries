@@ -2,6 +2,7 @@
   import { resolve } from '$app/paths'
   import { navItems } from './navItems.js'
   import isiLogo from '#assets/isi_logo.svg'
+  const year = new Date().getFullYear()
 </script>
 
 <footer class="site-footer bg-warning pt-5 pb-2">
@@ -67,7 +68,7 @@
     </div>
     <div class="d-flex justify-content-between text-bg-warning flex-wrap pt-3">
       <div class="copyright">
-        Copyright &#x000A9; <span id="year">2024</span>
+        Copyright &#x000A9; <span id="year">{year}</span>
         - Ikram Steel Industries
       </div>
       <div class="powered">
